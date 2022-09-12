@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.header {
+    background-color: hsl(0, 18%, 3%);
+    width: 17%;
+    min-height: 100vh;
+}
+
+
+body {
+    background-color: #1c1c1c;
+}
+
+main {
+    width: 100%;
+    margin-left: 50px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.elements__title {
+    font-family: 'Antonio', sans-serif;
+    letter-spacing: 6px;
+    font-size: 65px;
+
+}
+
+.elements {
+    margin-top: 50px;
+}
+
+.elements a {
+    text-decoration: none;
+    cursor: default;
+}
+
+nav ul a {
+    text-decoration: none;
+}
+
+.elements__navigations {
+    margin-top: 100px;
+}
+
+.container_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.nav__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.str {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    margin-top: 50px;
+    background: white;
+}
+
+.elements__navigations li {
+    margin-top: 28px;
+    font-size: 23px;
+    list-style-type: none;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.icon_text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.icon_text a {
+    margin-left: 10px;
+}
+
+footer {
+    height: 30vh;
+    background-color:hsl(0, 18%, 3%);
+}
+
+.footer {
+    display: flex;
+}
+
+.column {
+    margin-top: 4vh;
+    margin-left: 20%;
+}
+
+.footer_text {
+    color: #444ce2;
+    margin-top: 30px;
+}
+
+footer p {
+    cursor: default;
+}
+
+.header__container {
+    display: flex;
+}
+
+.cap__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 4vh;
+    margin-bottom: 5vh;
+    width: 100%;
+    background-color: #2a2a2a;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: -35px;
+}
+
+.nav {
+    margin-right: 2vh;
+}
+
+.nav li {
+    list-style-type: none;
+    margin-right: 22px;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav__img  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.icon_text a {
+    text-decoration: none;
+}
+
+.container-4{
+	overflow: hidden;
+	width: 600px;
+  vertical-align: middle;
+  white-space: nowrap;
+  /* position: relative; */
+}
+.container-4 input#search{
+  width: 350px;
+  height: 50px;
+  background: hsl(0, 18%, 3%);
+  border: none;
+  font-size: 10pt;
+  float: left;
+	color: #fff;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+ /* FIND */
+.container-4 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+.container-4 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+.container-4 input#search:-ms-input-placeholder {  
+   color: #65737e;  
+}
+
+.container-4 button.icon{
+	-webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  background: rgb(68, 76, 226);
+  height: 50px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+  outline:none;
+  opacity: 1;
+  margin-left: -50px;
+  cursor: pointer;
+}
+
+	.container-4 input#search:focus, .container-4 input#search:active{
+    outline:none; 
+	}
+	
