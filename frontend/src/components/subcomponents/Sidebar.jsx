@@ -6,7 +6,7 @@ const Sidebar = (props) => {
             <div className="header">
                 <div className="container_wrapper">
                     <div className="elements">
-                        <Link to="/"><h1 className="elements__title">AVIATO</h1></Link>
+                        <Link to="/"><h1 className="elements__title">HOSPITAL</h1></Link>
                     </div>
 
                         <div>

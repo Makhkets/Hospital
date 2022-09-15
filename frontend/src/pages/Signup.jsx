@@ -1,10 +1,34 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
-import {Link } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 import { signup } from '../actions/login';
+import { User } from '../actions/user';
 
 
 
 const Signup = () => {
+    // const user = User()
+    const navigate = useNavigate();
+    
+    
+    const [user, setUser] = useState(null)
+    useEffect(() => {
+        if (user) {
+            navigate("/")
+        } else {
+            const f = async () => {
+                return await User()
+            }
+    
+            f()
+                .then(
+                    res => setUser(res)
+                )
+        }
+    })
+
+    
+
     const [data, setData] = useState(
         {email: "", username: "", password: "", repeatPassword: ""}
     )
@@ -19,6 +43,7 @@ const Signup = () => {
 
         if (password === repeatPassword) {
             signup(email, username, password)
+            document.location.href = "/"
         } else {
             console.error("Пароли не одинаковы");
         }

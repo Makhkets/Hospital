@@ -1,4 +1,4 @@
-export default function setCookie(name, value, options = {}) {
+function setCookie(name, value, options = {}) {
     options = {
       path: '/',
       ...options
@@ -19,5 +19,7 @@ export default function setCookie(name, value, options = {}) {
     }
   
     document.cookie = updatedCookie;
-  }
-  
+}
+
+
+export default setCookie

@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import Sidebar from "./subcomponents/Sidebar";
 import Footer from "./subcomponents/Footer";
 import Cap from "./subcomponents/Cap";
+import { User } from "../actions/user";
+
 
 
 const Layout = () => {
@@ -20,6 +22,8 @@ const Layout = () => {
             return "4";
         return "1";
     }
+
+    User()
 
     return (
         <>
