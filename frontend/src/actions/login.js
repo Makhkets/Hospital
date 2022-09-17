@@ -23,14 +23,30 @@ export const signup = async (email, username, password) => {
         const access = response.data.access
         const refresh = response.data.refresh
         
-        console.log(response.data)
-
-        setCookie("access", access, {'max-age': 200000})
+        setCookie("access", access, {'max-age': 300})
         setCookie("refresh", refresh, {'max-age': 3024000})
+
+
+        let resp = await axios.post(`${url}/auth/users/resend_activation/`, {email: email}, {
+            headers: {
+                "authorization": `JWT ${access}`
+            }
+        });
+
+        console.log(resp)
+        console.log(resp)
+        console.log(resp)
+        console.log(resp)
+        console.log(resp)
+        console.log(resp)
+        console.log(resp)
+        
+
+
         return true
         
     } catch(e) {
-        console.log(e.response.data)
+        console.log(e)
 
     }
 }

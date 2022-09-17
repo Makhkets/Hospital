@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+from corsheaders.defaults import default_headers
 from datetime import timedelta
 from pathlib import Path
 
@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'corsheaders',
     'rest_framework',
     'djoser',
     'rest_framework_simplejwt',
-    'corsheaders',
 
     'hospital',
 ]
@@ -144,8 +144,14 @@ REST_FRAMEWORK = {
     ),
 }
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_HEADERS = [ 
+    "*",
+]
+
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,
@@ -175,3 +181,14 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(days=30),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+
+
+
+# mail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'postmaster@sandboxfcd71419f2c347848a36b92aaeffc7c7.mailgun.org'
+EMAIL_HOST_PASSWORD = 'f1816e202312f9da044fdd5c414d437c-680bcd74-f02cbc52'
+EMAIL_USE_TLS = True

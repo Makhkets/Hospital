@@ -1,40 +1,53 @@
 import axios from "axios"
+import { useState } from "react"
 import getCookie from "./getCookie"
 import setCookie from "./setCookie"
 
-export const User = async () => {
-    try {
-        const access = getCookie("access")
-        const refresh = getCookie("refresh")
+export const getUser = async () => {
+    const access = getCookie("access")
+    const refresh = getCookie("refresh")
+    const url = "http://127.0.0.1:8000"
+    
 
-        if (access) {
-            let url = "http://127.0.0.1:8000/auth/users/me/"
-            let config = {
-                headers: {       
-                    'Content-Type': 'application/json',
-                    'Authorization': `JWT ${access}`
-                }
+    if (access) {
+
+        let response = await axios.get(`${url}/auth/users/me`, {
+            headers: {
+                "Authorization": `JWT ${access}`
             }
+        })
 
-            const req = async () => {
-                const {data} = await axios.get(url, config)
-                return data
-            }
-
-            const response = await req()
-            
-            if (response) {
-                if (response.id > 0) {
-                   return response
-                };
-            };
-            
-            return false;
+        if (response.data.id > 0) {
+            return response
+        } else {
+            return false
         }
-        console.log("Не авторизован")
-        return false;
-    } catch(e) {
-        console.log("Ошибка " + e)
-        return false;
+
+    } 
+    
+    else if (refresh) {
+        let response = await axios.post(`${url}/auth/jwt/refresh/`, {
+            "refresh": refresh
+        })
+
+        setCookie("access", response.data.access, {'max-age': 300})
+
+        let resp = await axios.get(`${url}/auth/users/me`, {
+            headers: {
+                "Authorization": `JWT ${response.data.access}`
+            }
+        })
+
+        if (response.data.id > 0) {
+            return response
+        } else {
+            return false
+        }
+    } 
+    
+
+    else {
+        return false
     }
 }
+

@@ -11,6 +11,8 @@ class CustomUser(AbstractUser):
         blank=True,
         null=True
     )
+    is_confirmed = models.BooleanField(default=False)
+    REQUIRED_FIELDS = [ "email", 'is_staff', "is_confirmed"]
 
     def __str__(self):
         return self.email

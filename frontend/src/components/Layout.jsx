@@ -1,16 +1,32 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import Sidebar from "./subcomponents/Sidebar";
 import Footer from "./subcomponents/Footer";
 import Cap from "./subcomponents/Cap";
-import { User } from "../actions/user";
-
+import { getUser, User } from "../actions/user";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 const Layout = () => {
+
+    
+    useEffect(() => {
+        const result = async () => {
+            const data = await getUser()
+            console.log(data.data)
+        }
+
+        result()
+    })
+
+
+
     const location = useLocation()
+    const navigate = useNavigate()
+    
     const choice = () => {
         if (location.pathname === "/")
             return "1";
@@ -22,8 +38,6 @@ const Layout = () => {
             return "4";
         return "1";
     }
-
-    User()
 
     return (
         <>

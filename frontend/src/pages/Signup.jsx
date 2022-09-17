@@ -1,34 +1,34 @@
+import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import {Link, useNavigate } from 'react-router-dom'
 import { signup } from '../actions/login';
 import { User } from '../actions/user';
-
+import { Contex } from '../context';
 
 
 const Signup = () => {
-    // const user = User()
-    const navigate = useNavigate();
-    
-    
-    const [user, setUser] = useState(null)
+    let navigate = useNavigate();
+    const {getUser} = useContext(Contex)
+    const [user, setUser] = useState(false)
+     
     useEffect(() => {
+        const result = async () => {
+            const data = await getUser()
+            if (data)
+                setUser(data.data)
+            else
+                setUser(false)
+        }
+
+        result()
+
         if (user) {
             navigate("/")
-        } else {
-            const f = async () => {
-                return await User()
-            }
-    
-            f()
-                .then(
-                    res => setUser(res)
-                )
         }
     })
-
     
-
+    
     const [data, setData] = useState(
         {email: "", username: "", password: "", repeatPassword: ""}
     )
@@ -43,12 +43,11 @@ const Signup = () => {
 
         if (password === repeatPassword) {
             signup(email, username, password)
-            document.location.href = "/"
+            navigate("/")
+
         } else {
             console.error("Пароли не одинаковы");
         }
-        
-
     }
     
     return (
