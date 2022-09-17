@@ -1,12 +1,30 @@
 import { useState } from 'react';
-import {Link } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
+import { signin } from '../actions/signin';
 
 const Signin = () => {
-
+    const navigate = useNavigate()
     const [data, setData] = useState(
-            {email: "", password: ""}
+            {username: "", password: ""}
     )
+    const [error, setError] = useState(false)
     
+    function signIn(e) {
+        e.preventDefault()
+
+        
+        const username = data.username
+        const password = data.password
+        
+        let response = signin(username, password)
+
+        if (response) {
+            navigate("/")
+        } else {
+
+        }
+
+    }
 
     return (
         <div className="grid">
@@ -14,19 +32,21 @@ const Signin = () => {
             <div className="form__field">
                 <label htmlFor="login__username"><svg className="icon">
                     <use xlinkHref="#icon-user"></use>
-                </svg><span className="hidden">Username</span></label>
-                <input autoComplete="username" id="login__username" type="text" name="username" className="form__input" placeholder="Username" required />
+                </svg><span className="hidden">Email</span></label>
+                <input autoComplete="username" id="login__username" type="text" name="username" className="form__input" placeholder="Email" required
+                onChange={e => setData({...data, username: e.target.value})} value={data.username} />
             </div>
         
             <div className="form__field">
                 <label htmlFor="login__password"><svg className="icon">
                     <use xlinkHref="#icon-lock"></use>
                 </svg><span className="hidden">Password</span></label>
-                <input id="login__password" type="password" name="password" className="form__input" placeholder="Password" required />
+                <input id="login__password" type="password" name="password" className="form__input" placeholder="Password" required
+                onChange={e => setData({...data, password: e.target.value})} value={data.password} />
             </div>
         
             <div className="form__field">
-                <input type="submit" value="Sign In" />
+                <input type="submit" value="Sign In" onClick={signIn} />
             </div>
             </form>
         
@@ -34,6 +54,10 @@ const Signin = () => {
                 <use xlinkHref="#icon-arrow-right"></use>
             </svg></p>
             
+            {error ? error.map((el) => (
+                <p style={{color: "red"}} key={el}>{el}</p>
+            )) : undefined}
+
 
             
             <svg xmlns="http://www.w3.org/2000/svg" className="icons">

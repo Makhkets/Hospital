@@ -58,7 +58,7 @@ const Signup = () => {
                         <use xlinkHref="#icon-user"></use>
                     </svg><span className="hidden">Email</span></label>
                     <input autoComplete="username" id="login__username" type="text" name="E,a" className="form__input" placeholder="Email" required 
-                    onChange={e => setData({...data, email: e.target.value})} value={data.email}/>
+                    onChange={e => setData({...data, email: e.target.value})} value={data.email} />
                 </div>
             
                 <div className="form__field">
@@ -85,9 +85,9 @@ const Signup = () => {
                     onChange={e => setData({...data, repeatPassword: e.target.value})} value={data.repeatPassword} />
                 </div>
         
-            <div className="form__field">
-                <input type="submit" value="Sign Up" onClick={signUp}/>
-            </div>
+                <div className="form__field">
+                    <input type="submit" value="Sign Up" onClick={signUp} />
+                </div>
             </form>
         
             <p className="text--center">Not a member? <Link to="/signin">Sign In Now</Link> <svg className="icon">

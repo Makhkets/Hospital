@@ -9,11 +9,14 @@ import Information from "./pages/Information"
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
 
+
 import { Contex } from "./context";
 
 import { getUser } from "./actions/user";
 
 import "./css/style.css"
+
+import Activate from "./pages/Activate";
 
 
 const App = () => {
@@ -31,6 +34,7 @@ const App = () => {
                 <Route path="/information" element={<Information />} />
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/activate/:uid/:token/" element={<Activate />} />
             </Route>        
           </Routes>
 

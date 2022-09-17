@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os
 from corsheaders.defaults import default_headers
 from datetime import timedelta
 from pathlib import Path
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'djoser',
+    'django_extensions',
     'rest_framework_simplejwt',
 
     'hospital',
@@ -68,7 +70,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -150,6 +152,16 @@ CORS_ALLOW_HEADERS = [
     "*",
 ]
 
+DJOSER = {
+    'SET_PASSWORD_RETYPE' : True,
+    'LOGOUT_ON_PASSWORD_CHANGE' : True,
+    'PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND' : True,
+    'ACTIVATION_URL': 'auth/users/activate/{uid}/{token}',
+    'SEND_ACTIVATION_EMAIL': True,
+    'SERIALIZERS': {},
+}
+
+
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
@@ -189,6 +201,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = "smtp.mailgun.org"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'postmaster@sandboxfcd71419f2c347848a36b92aaeffc7c7.mailgun.org'
-EMAIL_HOST_PASSWORD = 'f1816e202312f9da044fdd5c414d437c-680bcd74-f02cbc52'
+EMAIL_HOST_USER = 'postmaster@sandboxe082c7446edf475da365b6fbd7855eef.mailgun.org'
+EMAIL_HOST_PASSWORD = '8d83ae043c777571724c8f83f58d6267-680bcd74-8e8c0ac2'
 EMAIL_USE_TLS = True
