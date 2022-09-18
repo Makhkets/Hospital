@@ -230,3 +230,13 @@ footer p {
     outline:none; 
 	}
 	
+.beautifulButton {
+    background-color: var(--loginSubmitBackgroundColor);
+    color: var(--loginSubmitColor);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--loginBorderRadus);
+    padding: 1rem;
+    cursor: pointer;
+    border: 0 solid;
+}

@@ -13,19 +13,27 @@ import { useEffect } from "react";
 const Layout = () => {
 
     
+    const [flag, setFlag] = useState(null)
+    const [user, setUser] = useState({})
+
     useEffect(() => {
         const result = async () => {
             const data = await getUser()
             console.log(data.data)
+
+    
+            if (data.data) {
+                setFlag(true)
+                setUser(data.data)
+            } else {
+                setFlag(false)
+            }
         }
-
         result()
-    })
-
+      }, []);
 
 
     const location = useLocation()
-    const navigate = useNavigate()
     
     const choice = () => {
         if (location.pathname === "/")
@@ -39,18 +47,22 @@ const Layout = () => {
         return "1";
     }
 
-    return (
-        <>
-            <div className="container">
-                <Sidebar choice={choice()} />
-                <main>
-                    <Cap />
-                    <Outlet />
-                </main>        
-            </div>
-            <Footer />
-        </>
-    );
+    if (flag === null) {
+        // значит не весь компонент загрузился
+    } else {
+        return (
+            <>
+                <div className="container">
+                    <Sidebar choice={choice()} user={user} flag={flag} />
+                    <main>
+                        <Cap user={user} flag={flag} />
+                        <Outlet />
+                    </main>        
+                </div>
+                <Footer user={user} flag={flag} />
+            </>
+        );
+    }
 };
 
 export default Layout;

@@ -38,8 +38,8 @@ export const getUser = async () => {
             }
         })
 
-        if (response.data.id > 0) {
-            return response
+        if (resp.data.id > 0) {
+            return resp
         } else {
             return false
         }

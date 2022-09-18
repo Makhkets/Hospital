@@ -1,8 +1,31 @@
+import { useEffect } from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import {Link, useNavigate } from 'react-router-dom'
 import { signin } from '../actions/signin';
+import { getUser } from '../actions/user';
+import { Contex } from '../context';
 
 const Signin = () => {
+
+    const {getUser} = useContext(Contex)
+    const [user, setUser] = useState(false)
+    useEffect(() => {
+        const result = async () => {
+            const data = await getUser()
+            if (data)
+                setUser(data.data)
+            else
+                setUser(false)
+        }
+
+        result()
+
+        if (user) {
+            navigate("/")
+        }
+    })
+    
     const navigate = useNavigate()
     const [data, setData] = useState(
             {username: "", password: ""}

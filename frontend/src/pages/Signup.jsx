@@ -7,27 +7,12 @@ import { User } from '../actions/user';
 import { Contex } from '../context';
 
 
-const Signup = () => {
+const Signup = (props) => {
     let navigate = useNavigate();
-    const {getUser} = useContext(Contex)
-    const [user, setUser] = useState(false)
-     
-    useEffect(() => {
-        const result = async () => {
-            const data = await getUser()
-            if (data)
-                setUser(data.data)
-            else
-                setUser(false)
-        }
 
-        result()
-
-        if (user) {
-            navigate("/")
-        }
-    })
-    
+    if (props.flag) {
+        navigate("/")
+    }
     
     const [data, setData] = useState(
         {email: "", username: "", password: "", repeatPassword: ""}
