@@ -44,20 +44,20 @@
 
 #### Страница авторизованного пользователя (показывается аватарка и username человека)
 
-![image-20220918111034182](C:\Users\rahim\Desktop\hospital\images\1.png)![image-20220918111103686](C:\Users\rahim\Desktop\hospital\images\2.png)
+![image-20220918111034182](images\1.png)![image-20220918111103686](images\2.png)
 
 #### Страница НЕ авторизованного пользователя (показывается аватарка с знаком вопроса и две ссылки для регистрации и авторизации)
 
-![image-20220918111213191](C:\Users\rahim\Desktop\hospital\images\3.png)![image-20220918111324060](C:\Users\rahim\Desktop\hospital\images\2.png)
+![image-20220918111213191](images\3.png)![image-20220918111324060](images\2.png)
 
 
 
 ##### Страница Регистрации (все ссылки рабочие)
 
-![image-20220918111424807](C:\Users\rahim\Desktop\hospital\images\4.png)
+![image-20220918111424807](images\4.png)
 
 
 
 ##### Страница авторизации (все ссылки рабочие)
 
-![image-20220918111511073](C:\Users\rahim\Desktop\hospital\images\5.png)
+![image-20220918111511073](images\5.png)
