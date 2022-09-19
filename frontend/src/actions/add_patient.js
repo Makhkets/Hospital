@@ -1,7 +1,8 @@
 import axios from "axios";
 import getCookie from "./getCookie";
 
-async function addPatient(first_name, last_name, patronymic, passport_series, medical_number, doctor) {
+async function addPatient(first_name, last_name, patronymic,
+                            passport_series, medical_number, doctor, branch) {
     try {
         const access = getCookie("access")
         let response = await axios.post(`http://127.0.0.1:8000/auth/patients/`, {
@@ -10,6 +11,7 @@ async function addPatient(first_name, last_name, patronymic, passport_series, me
             patronymic: patronymic,
             series: passport_series,
             medical_number: medical_number,
+            branch: branch,
             doctor: doctor,
         }, {
             headers: {

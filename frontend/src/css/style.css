@@ -96,7 +96,7 @@ nav ul a {
 }
 
 footer {
-    height: 30vh;
+    height: 100%;
     background-color:hsl(0, 18%, 3%);
 }
 
@@ -239,4 +239,9 @@ footer p {
     padding: 1rem;
     cursor: pointer;
     border: 0 solid;
+}
+
+.non_strelka {
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }

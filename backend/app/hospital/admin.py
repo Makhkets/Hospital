@@ -6,12 +6,12 @@ class PatientAdmin(admin.ModelAdmin):
     list_display = (
         'id', 'first_name', 'last_name',
          'patronymic', 'series', 'medical_number',
-          'last_create',
+          'branch', 'last_create',
            'updated')
     search_fields = (
         'id', 'first_name', 'last_name',
          'patronymic', 'series', 'medical_number',
-          'last_create', 'updated', 'created')
+          'branch', 'last_create', 'updated', 'created')
     list_filter = ('last_create', 'updated', 'created')
 
 

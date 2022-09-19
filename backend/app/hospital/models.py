@@ -20,16 +20,24 @@ class CustomUser(AbstractUser):
 
 USER = get_user_model()
 class Patient(models.Model):
+    CHOICES = (
+        ("Терапия", "Терапия"),
+        ("Кардиология", "Кардиология"),
+        ("Неврология", "Неврология"),
+        ("Хирургическая", "Хирургическая"),
+        ("Эндокринология", "Эндокринология"),
+    )
 
     first_name = models.CharField(max_length=40, verbose_name="Имя")
     last_name = models.CharField(max_length=40, verbose_name="Фамилия")
     patronymic = models.CharField(max_length=40, verbose_name="Отчество")
     series = models.CharField(max_length=500, verbose_name="Cерия и Номер Паспорта")
     medical_number = models.CharField(max_length=500, verbose_name="Номер Мед. Полиса")
+    branch = models.CharField(max_length=50, verbose_name="Отделение", choices=CHOICES)
     last_create = models.DateTimeField(auto_now_add=True, verbose_name="Последняя время добавления")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Добавлен")
     updated = models.DateTimeField(auto_now=True, verbose_name="Обновлен в")
-    
+
     doctor = models.ForeignKey(
         USER, 
         on_delete=models.PROTECT, 

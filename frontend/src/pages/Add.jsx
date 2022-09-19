@@ -8,24 +8,27 @@ const Add = () => {
     const [user, setUser] = useOutletContext();
     const [p, setPatient] = useState({
         first_name: "", last_name: "", patronymic: "",
-        pasport_series: "", medical_number: ""
+        pasport_series: "", medical_number: "", branch: ""
     })
 
     function patient(e) {
         e.preventDefault()
+        
+
         if (user.is_staff) {
             const first_name = p.first_name
             const last_name = p.last_name
             const patronymic = p.patronymic
             const passport_series = p.pasport_series
             const medical_number = p.medical_number
+            const branch = p.branch
             if (
                 first_name && last_name
                 && patronymic && passport_series
-                && medical_number     
+                && medical_number && branch  
             ) {
                 addPatient(first_name, last_name, patronymic,
-                           passport_series, medical_number, user.id)
+                           passport_series, medical_number, user.id, branch)
                 setInformation(true)
             } else {
                 console.error("Вы не являетесь доктором!")
@@ -104,7 +107,17 @@ const Add = () => {
                     <input id="login__passwor2d" type="password" name="password" className="form__input" placeholder="Номер Мед. Полиса" required
                     onChange={e => setPatient({...p, medical_number: e.target.value})} value={p.medical_number} />
                 </div>
-        
+
+                <select className="non_strelka" style={{backgroundColor: "var(--loginLabelBackgroundColor)", height: "6vh",
+                textAlign: "center", border: "none",}} onChange={e => setPatient({...p, branch: e.target.value})} value={p.branch} required>
+                    <option value="Терапия">Терапия</option>
+                    <option value="Кардиология">Кардиология</option>
+                    <option value="Неврология">Неврология</option>
+                    <option value="Хирургическая">Хирургическая</option>
+                    <option value="Эндокринология">Эндокринология</option>
+                </select>
+
+
                 <div className="form__field">
                     <input type="submit" value="Зарегистрировать Пациента" onClick={patient} />
                 </div>

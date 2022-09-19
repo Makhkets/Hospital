@@ -18,6 +18,8 @@ const Footer = () => {
                     <p className="footer_text">Мы в Instagram</p>
                 </div>
             </div>
+            <br />
+            <br />
         </footer>
     );
 };
