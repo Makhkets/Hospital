@@ -5,13 +5,6 @@ async function confirmEmail(uid, token) {
         uid: uid,
         token: token
     })
-
-    console.log(response)
-    console.log(response)
-    console.log(response)
-    console.log(response)
-    console.log(response)
-
 }
   
 export default confirmEmail;

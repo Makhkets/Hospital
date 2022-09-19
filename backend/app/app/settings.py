@@ -199,3 +199,8 @@ SIMPLE_JWT = {
 # mail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'postmaster@sandboxe082c7446edf475da365b6fbd7855eef.mailgun.org'
+EMAIL_HOST_PASSWORD = '8d83ae043c777571724c8f83f58d6267-680bcd74-8e8c0ac2'
+EMAIL_USE_TLS = True
