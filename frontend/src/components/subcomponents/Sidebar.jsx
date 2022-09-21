@@ -15,7 +15,7 @@ const Sidebar = (props) => {
                                     <ul>
                                         <div className="icon_text">
                                             <ion-icon name="grid-outline" style={props.choice === "1" ? {color: "#444ce2", fontSize: "30px"} : {color: "white", fontSize: "30px"}}></ion-icon>
-                                            <Link to="/"><li style={props.choice === "1" ? {color: "#444ce2"} : {color: "white"}}>Панель</li></Link>
+                                            <Link to="/"><li style={props.choice === "1" ? {color: "#444ce2"} : {color: "white"}}>Пациенты</li></Link>
                                         </div>
 
                                         <div className="icon_text">

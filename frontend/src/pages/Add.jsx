@@ -5,10 +5,12 @@ import addPatient from "../actions/add_patient";
 
 const Add = () => {
     const [information, setInformation] = useState(null)
+    const [userInfo, userInfoSet] = useState(false)
+
     const [user, setUser] = useOutletContext();
     const [p, setPatient] = useState({
         first_name: "", last_name: "", patronymic: "",
-        pasport_series: "", medical_number: "", branch: ""
+        pasport_series: "", medical_number: "", branch: "Терапия"
     })
 
     function patient(e) {
@@ -22,21 +24,33 @@ const Add = () => {
             const passport_series = p.pasport_series
             const medical_number = p.medical_number
             const branch = p.branch
+            
             if (
                 first_name && last_name
                 && patronymic && passport_series
                 && medical_number && branch  
             ) {
-                addPatient(first_name, last_name, patronymic,
-                           passport_series, medical_number, user.id, branch)
+
+                const f = async () => {
+                    const response = await addPatient(first_name, last_name, patronymic,
+                            passport_series, medical_number, user.id, branch)
+                    userInfoSet(response)     
+                }
+
+                f()
                 setInformation(true)
+
+                
+
             } else {
-                console.error("Вы не являетесь доктором!")
-                setInformation(false)                
+                console.error("Одно из полей пустое!")
+                setInformation(false)
+                userInfoSet(false)              
             }
         } else {
             console.error("Вы не являетесь доктором!")
             setInformation(false)
+            userInfoSet(false)
         }
     }
 
@@ -48,17 +62,30 @@ const Add = () => {
                 </div>
             )
         }
-        else if (information) {
+        else if (userInfo.error) {
+            if (userInfo.error.includes("Ошибка")) {
+                return (
+                    <div>
+                        <p style={{color: "red"}}>{userInfo.error}!</p>      
+                    </div>
+                )
+            }
+        }
+
+        else if (information && userInfo) {
             return (
                 <div>
                      <p style={{color: "green"}}>Вы успешно добавили пользователя</p>      
+                     <p style={{color: "green"}}>Код пациента: <b>{userInfo.id}</b></p>      
+                     <p style={{color: "green"}}>Отделение лечения: <b>{userInfo.branch}</b></p>      
+                     <p style={{color: "green"}}>Номер палаты: <b>{userInfo.chamber}</b></p>       
                 </div>
             )
         }
         else {
             return (
                 <div>
-                     <p style={{color: "red"}}>Ошибка при добавления пользователя<b />Перепроверьте все поля!</p>      
+                     <p style={{color: "red"}}>Ошибка при добавления пользователя<b /> Перепроверьте все поля!</p>      
                 </div>
             )
         }
@@ -123,7 +150,6 @@ const Add = () => {
                 </div>
 
                 {print_information()}
-
             </form>
         
 
@@ -143,4 +169,4 @@ const Add = () => {
     );
 };
 
-export default Add
+export default Add;

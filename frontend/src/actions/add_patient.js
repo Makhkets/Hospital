@@ -18,11 +18,9 @@ async function addPatient(first_name, last_name, patronymic,
                 "Authorization": `JWT ${access}`
             }
         })
-    
-        console.log(response)
-        return true
+        return response.data
     } catch(e) {
-        console.error(e)
+        if (e.response.data.error) {return e.response.data.error}
         return false
     }
 }

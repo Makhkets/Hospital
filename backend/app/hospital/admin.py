@@ -7,11 +7,11 @@ class PatientAdmin(admin.ModelAdmin):
         'id', 'first_name', 'last_name',
          'patronymic', 'series', 'medical_number',
           'branch', 'last_create',
-           'updated')
+           'updated', 'chamber')
     search_fields = (
         'id', 'first_name', 'last_name',
          'patronymic', 'series', 'medical_number',
-          'branch', 'last_create', 'updated', 'created')
+          'branch', 'last_create', 'updated', 'created', 'chamber')
     list_filter = ('last_create', 'updated', 'created')
 
 

@@ -1,8 +1,10 @@
+from asyncio import constants
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth import get_user_model 
 
+from loguru import logger as l
 
 class CustomUser(AbstractUser):
     email = models.EmailField()
@@ -19,15 +21,16 @@ class CustomUser(AbstractUser):
         return self.email
 
 USER = get_user_model()
+
 class Patient(models.Model):
     CHOICES = (
+        ("Не выбрано", "Не выбрано"),
         ("Терапия", "Терапия"),
         ("Кардиология", "Кардиология"),
         ("Неврология", "Неврология"),
         ("Хирургическая", "Хирургическая"),
         ("Эндокринология", "Эндокринология"),
     )
-
     first_name = models.CharField(max_length=40, verbose_name="Имя")
     last_name = models.CharField(max_length=40, verbose_name="Фамилия")
     patronymic = models.CharField(max_length=40, verbose_name="Отчество")
@@ -37,6 +40,7 @@ class Patient(models.Model):
     last_create = models.DateTimeField(auto_now_add=True, verbose_name="Последняя время добавления")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Добавлен")
     updated = models.DateTimeField(auto_now=True, verbose_name="Обновлен в")
+    chamber = models.PositiveIntegerField(verbose_name="Палата", null=True, blank=True)
 
     doctor = models.ForeignKey(
         USER, 
@@ -47,6 +51,7 @@ class Patient(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} {self.patronymic}"
+
 
     class Meta:
         verbose_name = "Пациент"
