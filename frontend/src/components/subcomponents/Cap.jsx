@@ -12,7 +12,7 @@ const Cap = (props) => {
                 <div className="cap">
                     <div className="container-4">
                         <input type="search" id="search" placeholder="Search..." />
-                        <button className="icon"><i className="fa fa-search"></i></button>
+                        <button className="icon" style={{marginBottom: "2.5px"}}><i className="fa fa-search"></i></button>
                         <Link to="/add"><button style={{marginLeft: "3vh", height: "50px"}} className="beautifulButton">Добавить пациента</button></Link>
                     </div>
                 </div>

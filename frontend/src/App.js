@@ -17,6 +17,7 @@ import { getUser } from "./actions/user";
 import "./css/style.css"
 
 import Activate from "./pages/Activate";
+import PatientProfile from "./pages/PatientPage";
 
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/activate/:uid/:token/" element={<Activate />} />
+                <Route path="/patient/:id" element={<PatientProfile />} />
             </Route>        
           </Routes>
 

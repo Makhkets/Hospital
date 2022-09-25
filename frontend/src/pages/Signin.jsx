@@ -56,7 +56,7 @@ const Signin = () => {
                 <label htmlFor="login__username"><svg className="icon">
                     <use xlinkHref="#icon-user"></use>
                 </svg><span className="hidden">Email</span></label>
-                <input autoComplete="username" id="login__username" type="text" name="username" className="form__input" placeholder="Email" required
+                <input autoComplete="username" id="login__username" type="text" name="username" className="form__input" placeholder="Username" required
                 onChange={e => setData({...data, username: e.target.value})} value={data.username} />
             </div>
         

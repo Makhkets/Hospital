@@ -57,6 +57,10 @@ class Patient(models.Model):
         verbose_name = "Пациент"
         verbose_name_plural = "Пациенты"
 
+class ActionHistory(models.Model):
+    user = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name="Пациент")
+    action = models.TextField(verbose_name="Действие")
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Добавлен")
 
 
 class userProfile(models.Model):
