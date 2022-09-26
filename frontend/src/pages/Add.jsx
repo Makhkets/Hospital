@@ -136,7 +136,7 @@ const Add = () => {
                 </div>
 
                 <select className="non_strelka" style={{backgroundColor: "var(--loginLabelBackgroundColor)", height: "6vh",
-                textAlign: "center", border: "none",}} onChange={e => setPatient({...p, branch: e.target.value})} value={p.branch} required>
+                textAlign: "center", border: "none", outline: "none"}} onChange={e => setPatient({...p, branch: e.target.value})} value={p.branch} required>
                     <option value="Терапия">Терапия</option>
                     <option value="Кардиология">Кардиология</option>
                     <option value="Неврология">Неврология</option>

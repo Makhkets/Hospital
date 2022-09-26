@@ -8,7 +8,6 @@ const Sidebar = (props) => {
                     <div className="elements">
                         <Link to="/"><h1 className="elements__title">HOSPITAL</h1></Link>
                     </div>
-
                         <div>
                             <div>
                                 <nav className="elements__navigations" style={{marginTop: "85px"}}>
@@ -20,7 +19,12 @@ const Sidebar = (props) => {
 
                                         <div className="icon_text">
                                             <ion-icon name="person-outline" style={props.choice === "2" ? {color: "#444ce2", fontSize: "30px"} : {color: "white", fontSize: "30px"}}></ion-icon>
-                                            <Link to="/profile"><li style={props.choice === "2" ? {color: "#444ce2"} : {color: "white"}}>Профиль</li></Link>
+                                            <Link to="/profile"><li style={props.choice === "2" ? {color: "#444ce2"} : {color: "white"}}>Отделения</li></Link>
+                                        </div>
+
+                                        <div className="icon_text">
+                                            <ion-icon name="add-circle-outline" style={props.choice === "4" ? {color: "#444ce2", fontSize: "30px"} : {color: "white", fontSize: "30px"}}></ion-icon>
+                                            <Link to="/add"><li style={props.choice === "4" ? {color: "#444ce2"} : {color: "white"}}>Добавить</li></Link>
                                         </div>
 
                                         <div className="icon_text">
@@ -28,15 +32,9 @@ const Sidebar = (props) => {
                                             <Link to="/information"><li style={props.choice === "3" ? {color: "#444ce2"} : {color: "white"}}>Информация</li></Link>
                                         </div>
 
-                                        <div className="icon_text">
-                                            <ion-icon name="add-circle-outline" style={props.choice === "4" ? {color: "#444ce2", fontSize: "30px"} : {color: "white", fontSize: "30px"}}></ion-icon>
-                                            <Link to="/add"><li style={props.choice === "4" ? {color: "#444ce2"} : {color: "white"}}>Добавить</li></Link>
-                                        </div>
                                     </ul>
                                 </nav>
                             </div>
-                            
-
                             <div className="str"></div>
                             <div>
                                 <nav className="elements__navigations">

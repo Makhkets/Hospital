@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 
 import Layout from "./components/Layout";
 import Index from "./pages/Index"
-import Profile from "./pages/Profile"
+import Branch from "./pages/Branch";
 import Add from "./pages/Add"
 import Information from "./pages/Information"
 import Signup from "./pages/Signup";
@@ -30,7 +30,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />} >
                 <Route index element={<Index />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route path="/profile" element={<Branch />} />
                 <Route path="/add" element={<Add />} />
                 <Route path="/information" element={<Information />} />
                 <Route path="/signin" element={<Signin />} />

@@ -40,6 +40,9 @@ class PatientAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
                                         'partial_update': [IsTokenAdminAuth],
                                         'destroy': [IsTokenAdminAuth],
                                 }
+    def get_queryset(self):
+        return Patient.objects.all() \
+                .exclude(branch="Не выбрано")
 
     def create(self, request):
         check = patient_check(data=request.data) # Проверяем пользователя на наличе, если есть то обновляем его

@@ -22,7 +22,6 @@ export const getUser = async () => {
             } else {
                 return false
             }
-    
         } 
         
         else if (refresh) {
@@ -45,7 +44,6 @@ export const getUser = async () => {
             }
         } 
         
-    
         else {
             return false
         }

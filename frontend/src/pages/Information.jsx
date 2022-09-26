@@ -1,29 +1,31 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import getStatistic from "../actions/get_statistic";
 
 const Information = () => {
-    const [statistic, setStatistic] = useState(0)
+    const [info, setInfo] = useState(0)
+    
+    useEffect(() => {
+        (async () => {
+            const data = await getStatistic()
+            setInfo(data)
+            console.log(data)
+        })()
+    }, [])
 
     function returnStatistic() {
-        if (statistic === 0) {
-            const getStat = async () => {
-                const data = await getStatistic()
-                setStatistic(data)
-                console.log("dsdsds")
-                    return (
-                        <>
-                            <li>Всего врачей: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>15</span></li>
-                            <li>Всего пациентов: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>5</span></li>
-                            <li>Пациентов в Терапии: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>2</span></li>
-                            <li>Пациентов в Кардиологии: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>7</span></li>
-                            <li>Пациентов в Нервология: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>2</span></li>
-                            <li>Пациентов в Хирургии: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>9</span></li>
-                            <li>Пациентов в Эндокринологии: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>6</span></li>
-                        </>
-                    )
-              }
-              getStat()
-        }
+        console.log("Бесконечный цикл")
+        return (
+            <>
+                <li>Всего врачей: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>{info.doctors}</span></li>
+                <li>Всего пациентов: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>{info.patients}</span></li>
+                <li>Пациентов в Терапии: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>{info.therapy}</span></li>
+                <li>Пациентов в Кардиологии: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>{info.cardiology}</span></li>
+                <li>Пациентов в Нервология: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>{info.neurology}</span></li>
+                <li>Пациентов в Хирургии: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>{info.surgical}</span></li>
+                <li>Пациентов в Эндокринологии: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>{info.endocrinology}</span></li>
+            </>
+        )
     }
 
     return (
