@@ -26,12 +26,10 @@ const Sidebar = (props) => {
                                             <ion-icon name="add-circle-outline" style={props.choice === "4" ? {color: "#444ce2", fontSize: "30px"} : {color: "white", fontSize: "30px"}}></ion-icon>
                                             <Link to="/add"><li style={props.choice === "4" ? {color: "#444ce2"} : {color: "white"}}>Добавить</li></Link>
                                         </div>
-
                                         <div className="icon_text">
                                             <ion-icon name="planet-outline" style={props.choice === "3" ? {color: "#444ce2", fontSize: "30px"} : {color: "white", fontSize: "30px"}}></ion-icon>
                                             <Link to="/information"><li style={props.choice === "3" ? {color: "#444ce2"} : {color: "white"}}>Информация</li></Link>
                                         </div>
-
                                     </ul>
                                 </nav>
                             </div>

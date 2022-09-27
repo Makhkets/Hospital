@@ -18,6 +18,7 @@ import "./css/style.css"
 
 import Activate from "./pages/Activate";
 import PatientProfile from "./pages/PatientPage";
+import ActiveBranch from "./pages/ActiveBranch";
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/activate/:uid/:token/" element={<Activate />} />
                 <Route path="/patient/:id" element={<PatientProfile />} />
+                <Route path="/branch/:branch" element={<ActiveBranch />} />
             </Route>        
           </Routes>
 

@@ -1,4 +1,5 @@
 
+from re import T
 from rest_framework.generics import (
             ListCreateAPIView,
             RetrieveUpdateDestroyAPIView,
@@ -57,6 +58,17 @@ class PatientAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
 
             return Response(PatientSerializer(patient).data)
 
+    @action(methods=["get"], detail=True, url_path="branch")
+    def branch_list(self, request, pk: str):
+        if pk == "endocrinology": pk="Эндокринология"
+        elif pk == "therapy": pk="Терапия"
+        elif pk == "cardiology": pk="Кардиология"
+        elif pk == "neurology": pk="Неврология"
+        elif pk == "surgical": pk="Хирургическая"
+
+        patients = Patient.objects.filter(branch=pk)
+        return Response(PatientSerializer(patients, many=True).data)
+
 class ActionHistoryAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
     queryset = ActionHistory.objects.all()
     serializer_class = ActionHistorySerializer
@@ -103,8 +115,6 @@ class StatisticAPIView(APIView):
                                 "endocrinology": patients.filter(branch="Эндокринология") \
                                                     .count(),
         })
-
-
 
 class UserProfileListCreateView(ListCreateAPIView):
     queryset = userProfile.objects.all()

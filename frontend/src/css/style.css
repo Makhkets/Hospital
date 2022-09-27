@@ -442,3 +442,22 @@ color: rgba(255,255,255,.7);
     margin-left: 25%;
     margin-bottom: 3%;
 }
+
+.branches {
+    display: flex;
+    flex: 0 1 25%;
+    
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.branches .branch {
+    padding: 20px;
+    width: 40%;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    background-color:black;
+    border-radius: 15px;
+}
+
+.branches .branch:nth-child(odd):last-child { width: 82% }
