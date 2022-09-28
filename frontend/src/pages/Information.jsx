@@ -9,12 +9,10 @@ const Information = () => {
         (async () => {
             const data = await getStatistic()
             setInfo(data)
-            console.log(data)
         })()
     }, [])
 
     function returnStatistic() {
-        console.log("Бесконечный цикл")
         return (
             <>
                 <li>Всего врачей: <span style={{color: "rgb(116, 141, 255)", fontWeight: "bolder"}}>{info.doctors}</span></li>

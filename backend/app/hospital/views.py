@@ -1,5 +1,3 @@
-
-from re import T
 from rest_framework.generics import (
             ListCreateAPIView,
             RetrieveUpdateDestroyAPIView,
@@ -8,22 +6,23 @@ from rest_framework.generics import (
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from .utils import patient_check, patient_create
-
-from .models import USER, ActionHistory, Patient, userProfile
+from .models import USER, ActionHistory, Patient, userProfile, Visit
 from .permissions import ActionPermissionClassesMixin, IsOwnerProfileOrReadOnly, IsTokenAdminAuth
-from .serializers import ActionHistorySerializer, userProfileSerializer
+from .serializers import ActionHistorySerializer, VisitSerializer, userProfileSerializer
+from .utils import patient_check, patient_create
+from .serializers import PatientSerializer
 
 from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.db.models import Q
 
 from rest_framework import generics, viewsets
 from rest_framework.decorators import action, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated,\
                                                 IsAdminUser
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import PatientSerializer
 
 from loguru import logger as l
 
@@ -58,6 +57,17 @@ class PatientAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
 
             return Response(PatientSerializer(patient).data)
 
+    @action(methods=["get"], detail=True, url_path="find")
+    def patient_find_list(self, request, pk: str):
+        search_query = pk
+        patients = Patient.objects.filter(
+            Q(first_name__icontains=search_query) | 
+            Q(last_name__icontains=search_query)  |
+            Q(patronymic__icontains=search_query) | 
+            Q(chamber__icontains=search_query)
+        )
+        return Response(PatientSerializer(patients, many=True).data)
+
     @action(methods=["get"], detail=True, url_path="branch")
     def branch_list(self, request, pk: str):
         if pk == "endocrinology": pk="Эндокринология"
@@ -87,6 +97,23 @@ class ActionHistoryAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
         actions = ActionHistory.objects.filter(user=pk)
         return Response(ActionHistorySerializer(actions, many=True).data)
 
+class VisitAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
+    queryset = Visit.objects.all()
+    serializer_class = VisitSerializer
+    action_permission_classes = {
+                                        'create': [IsTokenAdminAuth],
+                                        'retrieve': [IsTokenAdminAuth],
+                                        'list': [IsTokenAdminAuth],
+                                        'update': [IsTokenAdminAuth],
+                                        'detail': [IsTokenAdminAuth],
+                                        'partial_update': [IsTokenAdminAuth],
+                                        'destroy': [IsTokenAdminAuth],
+                                }
+
+    def list(self, request, *args, **kwargs):
+        visitors = Visit.objects.filter(solution=None)
+        return Response(VisitSerializer(visitors, many=True).data)
+    
 class StatisticAPIView(APIView):
     def get(self, request):
 

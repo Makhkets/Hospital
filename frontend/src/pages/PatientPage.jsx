@@ -6,19 +6,23 @@ import { useEffect } from "react";
 
 import extractPatient from "../actions/extract_patient";
 import addHistoryAction from "../actions/add_history_action";
+import contactRequest from "../actions/contact_request";
 
 const PatientProfile = () => {
     let params = useParams()
 
     const [flag, setFlag] = useState(false)
     const [report, setReport] = useState(0)
-
-    
     const [checkId, checkIdSet] = useState(0)
     const [info, setInfo] = useState(0)
-
     const [patient, setPatient] = useState(0)
-
+    
+    const [checkOpen, setChekOpen] = useState(0)
+    const [contact, setContact] = useState({
+                              phone: "",
+                              date: "",
+                              time: "",
+                        })
 
       useEffect(() => {
         if (info) {
@@ -127,6 +131,91 @@ const PatientProfile = () => {
       postAction("Пациент Выписан")
     }
 
+    function postContactRequest(e) {
+      e.preventDefault()
+      const f = async () => {
+        const response = await contactRequest(contact, patient.id)
+        setInfo(response)
+        setContact({
+          phone: "",
+          date: "",
+          time: "",
+        })    
+    }
+    f()
+
+    }
+
+    function posetPatient() {
+      const date = new Date()
+      let today = ""
+      let month = ""
+      
+      if (date.getMonth() + 1 > 9) {month = `${month++}`} else {month = `0${date.getMonth() + 1}`}
+      const toDayDate = `${date.getFullYear()}-${month}-${date.getDate()}`
+      
+      return (
+        <>
+          <div className="row" style={{width: "25%", marginLeft: "37%", marginTop: "2%"}}>
+            <form className="form login">
+                <div className="form__field">
+                    <label htmlFor="login__username"><svg className="icon">
+                        <use xlinkHref="#icon-user"></use>
+                    </svg><span className="hidden">Phone</span></label>
+                    <input autoComplete="username" id="login__username" type="number" name="username" className="form__input" placeholder="Номер телефона" required
+                    style={{backgroundColor: "var(--loginInputBackgroundColor)", paddingLeft: "15px"}} 
+                    onChange={e => setContact({...contact, phone: e.target.value})} value={contact.phone} />
+                </div>
+            
+                <div className="form__field">
+                    <label htmlFor="login__username"><svg className="icon">
+                        <use xlinkHref="#icon-user"></use>
+                    </svg><span className="hidden">Date</span></label>
+                    <input autoComplete="username" id="login__username" type="date" name="username" className="form__input" placeholder="Дата" required
+                    style={{backgroundColor: "var(--loginInputBackgroundColor)", paddingLeft: "15px"}} min={toDayDate} 
+                    onChange={e => setContact({...contact, date: e.target.value})} value={contact.date} />
+                </div>
+
+                <div className="form__field">
+                    <label htmlFor="login__username"><svg className="icon">
+                        <use xlinkHref="#icon-user"></use>
+                    </svg><span className="hidden">Phone</span></label>
+                    <input autoComplete="username" id="login__username" type="time" name="username" className="form__input" placeholder="Дата" required
+                    style={{backgroundColor: "var(--loginInputBackgroundColor)", paddingLeft: "15px"}} 
+                    onChange={e => setContact({...contact, time: e.target.value})} value={contact.time} />
+                </div>
+            
+                <div className="form__field">
+                    <input type="submit" value="Отправить заявку на посещение" onClick={postContactRequest} />
+                </div>
+            </form>
+          </div>
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" className="icons">
+                <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
+                <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
+                </symbol>
+                <symbol id="icon-lock" viewBox="0 0 1792 1792">
+                <path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z" />
+                </symbol>
+                <symbol id="icon-user" viewBox="0 0 1792 1792">
+                <path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z" />
+                </symbol>
+            </svg>
+
+        </>
+      );
+    };
+
+    function show() {
+      if (checkOpen) {
+        setChekOpen(false)
+      } else {
+        setChekOpen(true)
+      }
+    }
+
     if (!flag) {
       // Не успел загрузиться
     }
@@ -181,6 +270,9 @@ const PatientProfile = () => {
                     <h1 style={{textAlign: "center", marginTop: "3%", marginBottom: "1.2%"}}>Действия</h1>
                       <div className="patient_buttons">
                         <div className="row">
+                          <button className="button_other" style={{marginBottom: "10px"}} onClick={show}>Посетить посетителя</button>
+                        </div>
+                        <div className="row">
                           <button className="button_success" onClick={patientExtractF}>Выписать Пациента</button>
                           <button className="button_success" style={{marginLeft: "1%"}} onClick={() => postAction('Пациент проверен')}>Проверить Пациента</button>
                         </div>
@@ -191,6 +283,15 @@ const PatientProfile = () => {
                           <button className="button_primary" onClick={() => postAction('Намазана Мазь')} style={{marginLeft: "1%"}}>Намазана Мазь</button>
                         </div>
                         
+
+                        {checkOpen ? 
+                  
+                          posetPatient()
+                  
+                        : undefined}
+
+
+
                         {(() => {
                           if (info === 0) {
                             return (

@@ -23,6 +23,11 @@ const Sidebar = (props) => {
                                         </div>
 
                                         <div className="icon_text">
+                                            <ion-icon name="people-outline" style={props.choice === "5" ? {color: "#444ce2", fontSize: "30px"} : {color: "white", fontSize: "30px"}}></ion-icon>
+                                            <Link to="/visitors"><li style={props.choice === "5" ? {color: "#444ce2"} : {color: "white"}}>Посетители</li></Link>
+                                        </div>
+
+                                        <div className="icon_text">
                                             <ion-icon name="add-circle-outline" style={props.choice === "4" ? {color: "#444ce2", fontSize: "30px"} : {color: "white", fontSize: "30px"}}></ion-icon>
                                             <Link to="/add"><li style={props.choice === "4" ? {color: "#444ce2"} : {color: "white"}}>Добавить</li></Link>
                                         </div>

@@ -44,6 +44,8 @@ const Layout = () => {
             return "3";
         else if (location.pathname.includes("add"))
             return "4";
+        else if (location.pathname.includes("visitors"))
+            return "5"
         return "1";
     }
 

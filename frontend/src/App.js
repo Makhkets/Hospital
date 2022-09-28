@@ -9,9 +9,7 @@ import Information from "./pages/Information"
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
 
-
 import { Contex } from "./context";
-
 import { getUser } from "./actions/user";
 
 import "./css/style.css"
@@ -19,6 +17,8 @@ import "./css/style.css"
 import Activate from "./pages/Activate";
 import PatientProfile from "./pages/PatientPage";
 import ActiveBranch from "./pages/ActiveBranch";
+import FindPage from "./pages/FindPage";
+import Visitor from "./pages/Visitor";
 
 
 const App = () => {
@@ -34,11 +34,13 @@ const App = () => {
                 <Route path="/profile" element={<Branch />} />
                 <Route path="/add" element={<Add />} />
                 <Route path="/information" element={<Information />} />
+                <Route path="/visitors" element={<Visitor />} />
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/activate/:uid/:token/" element={<Activate />} />
                 <Route path="/patient/:id" element={<PatientProfile />} />
                 <Route path="/branch/:branch" element={<ActiveBranch />} />
+                <Route path="/find/:patient" element={<FindPage />} />
             </Route>        
           </Routes>
 

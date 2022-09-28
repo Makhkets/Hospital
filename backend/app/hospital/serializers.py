@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ActionHistory, userProfile, Patient
+from .models import ActionHistory, Visit, userProfile, Patient
 
 class userProfileSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField(read_only=True)
@@ -17,6 +17,13 @@ class PatientSerializer(serializers.ModelSerializer):
 class ActionHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = ActionHistory
+        fields = (
+            '__all__'
+        )
+
+class VisitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Visit
         fields = (
             '__all__'
         )
