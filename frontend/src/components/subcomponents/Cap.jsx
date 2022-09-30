@@ -60,6 +60,13 @@ const Cap = (props) => {
                     </nav>
                 </div>}
             </div>
+
+
+
+
+            
+
+            {/* <hr style={{marginBottom: "3%"}} /> */}
         </>
     );
 };

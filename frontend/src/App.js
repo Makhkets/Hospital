@@ -13,6 +13,8 @@ import { Contex } from "./context";
 import { getUser } from "./actions/user";
 
 import "./css/style.css"
+import "./css/index.css"
+
 
 import Activate from "./pages/Activate";
 import PatientProfile from "./pages/PatientPage";
@@ -27,7 +29,7 @@ const App = () => {
         <Contex.Provider value={{
           getUser
         }}>
-
+  
           <Routes>
             <Route path="/" element={<Layout />} >
                 <Route index element={<Index />} />
@@ -43,10 +45,11 @@ const App = () => {
                 <Route path="/find/:patient" element={<FindPage />} />
             </Route>        
           </Routes>
-
+  
         </Contex.Provider>
       </Fragment>
   );
 }
+
 
 export default App;

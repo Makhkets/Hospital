@@ -65,23 +65,14 @@ const Visitor = () => {
             <>
                 <div className="branch_container">
                     <div className="branches1">
-                        
-
                         {patients ?
-
                             patients.map((el, index) => {
-
-
                             returnUserData(el.patient)
-
-                                // el           - Это заявка                              
-                                // userVariable - Это пациент
-
                                 try {
                                     let userVariable = user[el.patient]
                                     return (
                                         <div className="branch1" key={index}>
-                                            <h1 style={{color: "var(--loginSubmitBackgroundColor)"}}>{userVariable.first_name} {userVariable.last_name} {userVariable.patronymic}</h1>
+                                            <h1 style={{color: "var(--loginSubmitBackgroundColor)"}}>{userVariable.first_name} {userVariable.last_name}</h1>
                                             
                                             <ul style={{marginTop: "21px", marginBottom: "21px", fontSize: "15px"}}>
                                                 <li>ID: {userVariable.id}</li>
@@ -98,12 +89,10 @@ const Visitor = () => {
                                 } catch {
                                     return <h1>Error</h1>
                                 }
-
-
                             })
                         : <h1>Пусто</h1>}
 
-                
+                        
                     </div>
                 </div>
             </>

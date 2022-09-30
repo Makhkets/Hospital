@@ -58,10 +58,8 @@ const Layout = () => {
                     <Sidebar choice={choice()} user={user} flag={flag} />
                     <main>
                         <Cap user={user} flag={flag} />
-
                         <Outlet context={[user, setUser]} />
-
-                    </main>        
+                    </main>
                 </div>
                 <Footer user={user} flag={flag} />
             </>
