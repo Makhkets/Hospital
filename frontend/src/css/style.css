@@ -387,6 +387,10 @@ color: rgba(255,255,255,.7);
     justify-content: center;
 }
 
+#table-container table {
+    border-radius: 20px;
+}
+
 .patient_first_td {
     background-color: #444ce2;
 }

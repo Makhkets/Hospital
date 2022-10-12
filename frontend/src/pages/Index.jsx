@@ -209,7 +209,7 @@ const Index = () => {
     function startAudio() {
         var audio = document.createElement("AUDIO")
         document.body.appendChild(audio);
-        audio.src = "https://zvukitop.com/wp-content/uploads/2020/09/Signalizacya-9.mp3"
+        audio.src = "https://zvukitop.com/wp-content/uploads/2020/09/Signalizacya-9" // Заменить звук сигнализации .mp3
         
         document.body.addEventListener("click", function () {
             audio.play()

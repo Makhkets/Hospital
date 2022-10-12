@@ -95,7 +95,7 @@ const PatientProfile = () => {
             <td>{ch_dihanya}</td>
           </tr>
           <tr>
-            <td className="patient_first_td">Температура:</td>
+            <td className="patient_first_td">Температура</td>
             <td>{temp}</td>
           </tr>
           <tr>
@@ -241,7 +241,7 @@ const PatientProfile = () => {
                     <td>{lastCreate(patient.last_create)}</td>
                   </tr>
                   <tr>
-                    <td className="patient_first_td">Проверка пациента была в:</td>
+                    <td className="patient_first_td">Проверка пациента была в</td>
                     <td>{lastCreate(patient.updated)}</td>
                   </tr>
                   <tr>

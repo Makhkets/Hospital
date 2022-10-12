@@ -100,7 +100,7 @@ const ActiveBranch = () => {
                         <hr style={{backgroundColor: "red", color: "red"}} />
                         {getStatePatientInfo()}
                     </ul>
-                    <Link to={"patient/" + el.id}>
+                    <Link to={"/patient/" + el.id}>
                         <button className="blue_led_button">
                             Подробнее
                         </button>
