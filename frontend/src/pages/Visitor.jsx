@@ -72,14 +72,14 @@ const Visitor = () => {
                                     let userVariable = user[el.patient]
                                     return (
                                         <div className="branch1" key={index}>
-                                            <h1 style={{color: "var(--loginSubmitBackgroundColor)"}}>{userVariable.first_name} {userVariable.last_name}</h1>
+                                            <h1 style={{color: "#28a745"}}>{userVariable.first_name} {userVariable.last_name}</h1>
                                             
                                             <ul style={{marginTop: "21px", marginBottom: "21px", fontSize: "15px"}}>
                                                 <li>ID: {userVariable.id}</li>
                                                 <li>Палата: {userVariable.chamber}</li>
                                                 <li>Отделение: {userVariable.branch}</li>
-                                                <li>Посетитель хочет прийти в: <span style={{color: "#748dff", fontWeight: "bolder"}}>{el.visit_time}</span></li>
-                                                <li>Номер телефона посетителя: <span style={{color: "#748dff", fontWeight: "bolder"}}>{el.phone}</span></li>
+                                                <li>Посетитель хочет прийти в: <span style={{color: "#28a745", fontWeight: "bolder"}}>{el.visit_time}</span></li>
+                                                <li>Номер телефона посетителя: <span style={{color: "#28a745", fontWeight: "bolder"}}>{el.phone}</span></li>
                                             </ul>
 
                                             <button className="button_success" onClick={() => accept(el.id, index)}>Одобрить</button>
