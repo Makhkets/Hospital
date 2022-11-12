@@ -610,8 +610,33 @@ body {
                             margin-bottom: 3%;
                             color:#34D178;
                         }
+                        select {
+                            border-radius: 16px;
+                            color: white;
+                            border: 0;
+                            background-color: #0b0b11;
+                            font-size: 18px;
+                            margin-bottom: 1%;
+                            padding: 2vh;
+                            outline: none;
+                            width: 250px;
+
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            text-indent: 1px;
+                            text-overflow: '';
+                            
+    
+                            p {
+                                font-size: 18px;
+                                margin-bottom: 3%;
+                                color:#34D178;
+                            }
+        
+                        }
     
                     }
+
                     .links {
                         margin-top: 1.7vh;
                         a {
@@ -775,5 +800,126 @@ body {
             font-size: 15px;
             cursor: pointer;
         }
+    }
+}
+
+.info_page_main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 95%;
+
+    .title {
+        margin-bottom: 3%;
+
+        h1 {
+            color: #34d178;
+            text-shadow: 0 0 30px #00ff1e;
+            font-size: 40px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
+    
+    .information_container {
+        display: flex;
+        justify-content: center;
+        .info_container {
+            .block {
+                ._1 {
+                    width:560px;height:650px;overflow:hidden;position:relative;
+                }
+                ._2 {
+                    width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box
+                }
+                ._3 {
+                    box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:scroll  ;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box
+                }
+                ._4 {
+    
+                }
+            }
+            .info_block {
+
+                .content_text {
+                    margin-bottom: 8%;
+                    .main {
+                        color: white;
+                        font-size: 20px;
+                        font-weight: 1000;
+                    }
+                    .second {
+                        font-size: 14px;
+                        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    }
+                }
+            }
+        }
+        
+        .map {
+            margin-left: 6%;
+            div {
+                position:relative;
+                overflow:hidden;
+            }
+    
+            .first {
+                color:#eee;
+                font-size:12px;
+                position:absolute;
+                top:0px;
+            }
+            .second {
+                color:#eee;
+                font-size:12px;
+                position:absolute;
+                top:14px;
+            }
+            .frame {
+                position:relative;
+            }
+        }
+    }
+
+    .statistics {
+        margin-top: 3%;
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            h1 {
+                color: #34d178;
+                text-shadow: 0 0 30px #00ff1e;
+                font-size: 40px;
+                margin-bottom: 1%;
+            }
+            div {
+                display: flex;
+                flex-wrap: wrap;
+                height: 60%;
+                width: 100%;
+                justify-content: center;
+                div {
+                    width: 20%;
+                    height: 100%;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    margin-left: 5%;
+
+                    .main {
+                        font-size: 17px;
+                        font-weight:bolder;
+                        height: 1px;
+                    }
+                    .second {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+
     }
 }

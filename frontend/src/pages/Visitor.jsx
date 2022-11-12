@@ -72,7 +72,7 @@ const Visitor = () => {
                                     let userVariable = user[el.patient]
                                     return (
                                         <div className="branch1" key={index}>
-                                            <h1 style={{color: "#28a745"}}>{userVariable.first_name} {userVariable.last_name}</h1>
+                                            <h1 style={{color: "#28a745", fontSize: "22px"}}>{userVariable.first_name} {userVariable.last_name}</h1>
                                             
                                             <ul style={{marginTop: "21px", marginBottom: "21px", fontSize: "15px"}}>
                                                 <li>ID: {userVariable.id}</li>
@@ -87,12 +87,10 @@ const Visitor = () => {
                                         </div>
                                     )
                                 } catch {
-                                    return <h1>Error</h1>
+                                    return <h1></h1>
                                 }
                             })
                         : <h1>Пусто</h1>}
-
-                        
                     </div>
                 </div>
             </>

@@ -284,7 +284,7 @@ const Index = () => {
                             <h1>Список <span>Пациентов</span></h1>
                         </div>
                         <div className="cards">
-                            <div className="card" style={{backgroundColor: "#0b0b11", borderRadius: "0px"}}>
+                            {/* <div className="card" style={{backgroundColor: "#0b0b11", borderRadius: "0px"}}>
                                 <div className="time">
                                     <p>Дата</p>
                                 </div>
@@ -297,7 +297,7 @@ const Index = () => {
                                 <div className="buttons">
                                     <p>Подробнее</p>
                                 </div>
-                            </div>
+                            </div> */}
                             {patients ? getElements() : <h1 style={{marginLeft: "4vh"}}>Пусто</h1>}
                         </div>
                     </div>

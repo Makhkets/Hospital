@@ -57,8 +57,7 @@ const Add = () => {
     function print_information() {
         if (information === null) {
             return (
-                <div>
-
+                <div className="error">
                 </div>
             )
         }
@@ -113,47 +112,51 @@ const Add = () => {
                             </div>
                             <div className="inputs">
                                 <div className="input">
-                                    <p>E-mail</p>
-                                    <input type="mail" placeholder="Введите E-mail" 
-                                      />
+                                    <p>Имя</p>
+                                    <input type="text" placeholder="Имя" 
+                                    onChange={e => setPatient({...p, first_name: e.target.value})} value={p.first_name}  />
                                 </div>
 
                                 <div className="input">
-                                    <p>Логин</p>
-                                    <input type="text" placeholder="Введите логин"
-                                     />
+                                    <p>Фамилие</p>
+                                    <input type="text" placeholder="Фамилие"
+                                    onChange={e => setPatient({...p, last_name: e.target.value})} value={p.last_name} />
                                 </div>
 
                                 <div className="input">
-                                    <p>Логин</p>
-                                    <input type="text" placeholder="Введите логин"
-                                     />
+                                    <p>Отчество</p>
+                                    <input type="text" placeholder="Отчество"
+                                    onChange={e => setPatient({...p, patronymic: e.target.value})} value={p.patronymic} />
                                 </div>
 
                                 <div className="input">
-                                    <p>Логин</p>
-                                    <input type="text" placeholder="Введите логин"
-                                     />
+                                    <p>Серие и номер паспорта</p>
+                                    <input type="text" placeholder="Серия и номер"
+                                    onChange={e => setPatient({...p, pasport_series: e.target.value})} value={p.pasport_series} />
                                 </div>
 
                                 <div className="input">
-                                    <p>Пароль</p>
-                                    <input type="password" placeholder="Введите пароль"
-                                     />
+                                    <p>Мед. Полис</p>
+                                    <input type="text" placeholder="Мед. Полис"
+                                    onChange={e => setPatient({...p, medical_number: e.target.value})} value={p.medical_number} />
                                 </div>
                                 <div className="input">
-                                    <p>Повторите пароль</p>
-                                    <input type="password" placeholder="Повторный пароль"
-                                     />
+                                    <p>Выберите отдел</p>
+                                    <select class="form-control js-example-tags"
+                                        onChange={e => setPatient({...p, branch: e.target.value})} value={p.branch} required>
+                                            <option selected="selected" value="Терапия">Терапия</option>
+                                            <option value="Кардиология">Кардиология</option>
+                                            <option value="Неврология">Неврология</option>
+                                            <option value="Хирургическая">Хирургическая</option>
+                                            <option value="Эндокринология">Эндокринология</option>
+                                    </select>
+
+
                                 </div>
-
-
-                                
-
                             </div>
                             <div className="button">
-                                <button>
-                                Зарегистрироваться
+                                <button onClick={patient}>
+                                    Зарегистрироваться
                                 </button>
                             </div>
                             
@@ -170,9 +173,7 @@ const Add = () => {
 };
 
 // onChange={e => setPatient({...p, first_name: e.target.value})} value={p.first_name}
-
 // onChange={e => setPatient({...p, last_name: e.target.value})} value={p.last_name}
-
 // onChange={e => setPatient({...p, patronymic: e.target.value})} value={p.patronymic}
 
 // onChange={e => setPatient({...p, pasport_series: e.target.value})} value={p.pasport_series}

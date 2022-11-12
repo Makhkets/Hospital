@@ -118,15 +118,19 @@ class StatisticAPIView(APIView):
     def get(self, request):
 
         patients = Patient.objects.all() \
-        .exclude(branch="Не выбрано") \
+            .exclude(branch="Не выбрано") \
 
         doctors = USER.objects.all() \
-        .count()
+            .count()
+
+        actions = ActionHistory.objects.all() \
+            .count()
 
         return Response({
                                 "patients": patients.count(),
                                 "doctors": doctors,
-                                
+                                "actions": actions,
+
                                 "therapy": patients.filter(branch="Терапия") \
                                                     .count(),
 
