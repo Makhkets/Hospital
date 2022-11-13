@@ -375,9 +375,7 @@ color: rgba(255,255,255,.7);
     border-radius: 20px;
 }
 
-.patient_first_td {
-    background-color: #444ce2;
-}
+
 
 .tbody_flex {
     display: flex;
@@ -385,72 +383,59 @@ color: rgba(255,255,255,.7);
 }
 
 .button_other {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    font-family: "Montserrat",sans-serif;
+    height: 5vh;
+    background-color: #182c24;
+    border-radius: 10px;
+    color: #34d178;
+    font-weight: 700;
+    font-size: 15px;
     cursor: pointer;
-    color: #fff;
-    background-color: #6c28a7;
-    border-color: #6c28a7;
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: 82%;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 
 
 .button_success {
+    align-items: center;
+    border: 0;
+    font-family: "Montserrat",sans-serif;
+    height: 5vh;
+    background-color: #182c24;
+    border-radius: 10px;
+    color: #34d178;
+    font-weight: 700;
+    font-size: 15px;
     cursor: pointer;
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: 40%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 2%;
 }
 
 
 .button_primary {
-    cursor: pointer;
+    align-items: center;
+    border: 0;
+    font-family: "Montserrat",sans-serif;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: #191b1f;
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;    
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    width: 40%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 2%;
 }
 
 .patient_description {
@@ -535,4 +520,19 @@ li {
 
 .fa-search {
     color: #0b0b11;
+}
+
+.wrapper_patient_buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.patient_buttons {
+    width: 70%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
 }

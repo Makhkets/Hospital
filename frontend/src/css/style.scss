@@ -919,7 +919,58 @@ body {
                 }
             }
         }
+    }
+}
 
+.patient_first_td {
+    background-color: #154734;
+}
 
+.row_forms {
+    margin-top: 2.5%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    .form_login {
+        width: 50%;
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            input {
+                border-radius: 16px;
+                color: #fff;
+                border: 0;
+                background-color: #182c24;
+                font-size: 15px;
+                margin-bottom: 1%;
+                padding: 2vh;
+                outline: none;
+                width: 100%;
+            }
+
+            p {
+                font-size: 15px;
+                color: #34d178;
+            }
+
+        }
+        button {
+            border: 0;
+            font-family: "Montserrat",sans-serif;
+            height: 6vh;
+            width: 100%;
+            background-color: #182c24;
+            border-radius: 10px;
+            color: #34d178;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin-top: 4.5%;
+            font-size: 15px;
+            cursor: pointer;
+        }
     }
 }

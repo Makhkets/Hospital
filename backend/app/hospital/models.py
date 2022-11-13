@@ -97,9 +97,3 @@ class userProfile(models.Model):
 
     def __str__(self):
         return self.user.username
-
-
-        Console.WriteLine("Введите одну букву");
-program(Console.ReadLine());
-
-
