@@ -6,9 +6,9 @@ from rest_framework.generics import (
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from .models import USER, ActionHistory, Patient, userProfile, Visit
-from .permissions import ActionPermissionClassesMixin, IsOwnerProfileOrReadOnly, IsTokenAdminAuth
-from .serializers import ActionHistorySerializer, VisitSerializer, userProfileSerializer
+from .models import USER, ActionHistory, Patient, userProfile, Visit, CustomUser, Service
+from .permissions import ActionPermissionClassesMixin, IsOwnerProfileOrReadOnly, IsTokenAdminAuth, IsEveryoneAllowed
+from .serializers import ActionHistorySerializer, VisitSerializer, userProfileSerializer, CustomUserSerializer, ServiceSerializer
 from .utils import patient_check, patient_create
 from .serializers import PatientSerializer
 
@@ -28,15 +28,16 @@ from loguru import logger as l
 
 frontend_url = "http://127.0.0.1:3000"
 
+
 class PatientAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
     action_permission_classes = {
                                         'create': [IsTokenAdminAuth],
-                                        'retrieve': [IsTokenAdminAuth],
-                                        'list': [IsTokenAdminAuth],
+                                        'retrieve': [IsEveryoneAllowed],
+                                        'list': [IsEveryoneAllowed],
                                         'update': [IsTokenAdminAuth],
-                                        'detail': [IsTokenAdminAuth],
+                                        'detail': [IsEveryoneAllowed],
                                         'partial_update': [IsTokenAdminAuth],
                                         'destroy': [IsTokenAdminAuth],
                                 }
@@ -79,14 +80,15 @@ class PatientAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
         patients = Patient.objects.filter(branch=pk)
         return Response(PatientSerializer(patients, many=True).data)
 
+
 class ActionHistoryAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
     queryset = ActionHistory.objects.all()
     serializer_class = ActionHistorySerializer
     action_permission_classes = {
                                         'create': [IsTokenAdminAuth],
                                         'retrieve': [IsTokenAdminAuth],
-                                        'list': [IsTokenAdminAuth],
-                                        'detail': [IsTokenAdminAuth],
+                                        'list': [IsEveryoneAllowed],
+                                        'detail': [IsEveryoneAllowed],
                                         'update': [IsTokenAdminAuth],
                                         'partial_update': [IsTokenAdminAuth],
                                         'destroy': [IsTokenAdminAuth],
@@ -97,23 +99,24 @@ class ActionHistoryAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
         actions = ActionHistory.objects.filter(user=pk)
         return Response(ActionHistorySerializer(actions, many=True).data)
 
+
 class VisitAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
     queryset = Visit.objects.all()
     serializer_class = VisitSerializer
     action_permission_classes = {
                                         'create': [IsTokenAdminAuth],
                                         'retrieve': [IsTokenAdminAuth],
-                                        'list': [IsTokenAdminAuth],
+                                        'list': [IsEveryoneAllowed],
                                         'update': [IsTokenAdminAuth],
-                                        'detail': [IsTokenAdminAuth],
+                                        'detail': [IsEveryoneAllowed],
                                         'partial_update': [IsTokenAdminAuth],
                                         'destroy': [IsTokenAdminAuth],
                                 }
-
     def list(self, request, *args, **kwargs):
         visitors = Visit.objects.filter(solution=None)
         return Response(VisitSerializer(visitors, many=True).data)
     
+
 class StatisticAPIView(APIView):
     def get(self, request):
 
@@ -147,6 +150,39 @@ class StatisticAPIView(APIView):
                                                     .count(),
         })
 
+
+class PersonalAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+    action_permission_classes = {
+                                        'create': [IsTokenAdminAuth],
+                                        'retrieve': [IsTokenAdminAuth],
+                                        'list': [IsEveryoneAllowed],
+                                        'update': [IsTokenAdminAuth],
+                                        'detail': [IsEveryoneAllowed],
+                                        'partial_update': [IsTokenAdminAuth],
+                                        'destroy': [IsTokenAdminAuth],
+                                }
+
+    def list(self, request, *args, **kwargs):
+        personal = CustomUser.objects.filter(is_staff=True)[0:4]
+        return Response(CustomUserSerializer(personal, many=True).data)  
+
+
+class ServiceAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+    action_permission_classes = {
+                                        'create': [IsTokenAdminAuth],
+                                        'retrieve': [IsTokenAdminAuth],
+                                        'list': [IsEveryoneAllowed],
+                                        'update': [IsTokenAdminAuth],
+                                        'detail': [IsEveryoneAllowed],
+                                        'partial_update': [IsTokenAdminAuth],
+                                        'destroy': [IsTokenAdminAuth],
+                                }
+
+
 class UserProfileListCreateView(ListCreateAPIView):
     queryset = userProfile.objects.all()
     serializer_class = userProfileSerializer
@@ -156,10 +192,12 @@ class UserProfileListCreateView(ListCreateAPIView):
         user = self.request.user
         serializer.save(user=user)
 
+
 class userProfileDetailView(RetrieveUpdateDestroyAPIView):
     queryset = userProfile.objects.all()
     serializer_class = userProfileSerializer
     permission_classes = [IsOwnerProfileOrReadOnly,IsAuthenticated]
+
 
 def email_activate(request, uid, token):
     return redirect(f'{frontend_url}/activate/{uid}/{token}/')

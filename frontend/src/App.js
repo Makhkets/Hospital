@@ -21,6 +21,7 @@ import PatientProfile from "./pages/PatientPage";
 import ActiveBranch from "./pages/ActiveBranch";
 import FindPage from "./pages/FindPage";
 import Visitor from "./pages/Visitor";
+import Personal from "./pages/Personal";
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/add" element={<Add />} />
                 <Route path="/information" element={<Information />} />
                 <Route path="/visitors" element={<Visitor />} />
+                <Route path="/personal" element={<Personal />} />
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/activate/:uid/:token/" element={<Activate />} />

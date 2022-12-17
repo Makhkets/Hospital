@@ -37,7 +37,8 @@ const Cap = (props) => {
                             <li><ion-icon name="bookmark-outline" style={{fontSize: "30px", color: "#34D178", cursor: "pointer"}}></ion-icon></li>
                             <li>
                                 <div className="nav__img">
-                                    <img src="https://www.khl.ru/images/players/3694.jpg" alt="" />
+                                    <img src={props.user.photo} alt="" />
+                                    {console.log(props.user)}
                                 </div>
                             </li>
                         </ul>

@@ -48,9 +48,9 @@ const Visitor = () => {
         if (id in lastId) {} else {
             setLastId(current => [...current, id])
             axios.get(`http://127.0.0.1:8000/auth/patients/${id}/`, {
-                headers: {
-                    "Authorization": "JWT " + getCookie('access')
-                }
+                // headers: {
+                //     "Authorization": "JWT " + getCookie('access')
+                // }
             }).then((response) => {
                 setUser(prevState => ({
                     ...prevState,

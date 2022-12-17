@@ -36,4 +36,8 @@ class IsTokenAdminAuth(BasePermission):
         except Exception as ex: 
             print(ex)
             return False
+
+class IsEveryoneAllowed(BasePermission):
+    def has_permission(self, request, view):
+        return True
         

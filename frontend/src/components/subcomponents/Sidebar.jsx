@@ -1,6 +1,21 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+
+import { findPersonal } from "../../actions/find_personal";
+
 
 const Sidebar = (props) => {
+    const [personal, setPersonal] = useState(false)
+
+    useEffect(() => {
+        (async () => {
+            const data = await findPersonal()
+            setPersonal(data)
+        })()
+    }, []);
+
+
     return (
         <>
             <div className="sidebar">
@@ -67,22 +82,19 @@ const Sidebar = (props) => {
                             <p>Врачи</p>
                         </div>
                         <div className="teachers">
-                            <div className="teacher">
-                                <img src="https://media.istockphoto.com/photos/female-teacher-pointing-with-finger-at-mathematical-equation-on-in-picture-id1080232656?k=20&m=1080232656&s=612x612&w=0&h=7OszmnpcTXIiIhqUXUL3sOaI-nn9DisJU8z3ceeHL5k=" alt="" />
-                                <p>Павел Александров <span>Аллерголог Венеролог</span></p>
-                            </div>
-                            <div className="teacher">
-                                <img src="https://media.istockphoto.com/photos/female-teacher-pointing-with-finger-at-mathematical-equation-on-in-picture-id1080232656?k=20&m=1080232656&s=612x612&w=0&h=7OszmnpcTXIiIhqUXUL3sOaI-nn9DisJU8z3ceeHL5k=" alt="" />
-                                <p>Павел Александров <span>Аллерголог Венеролог</span></p>
-                            </div>
-                            <div className="teacher">
-                                <img src="https://media.istockphoto.com/photos/female-teacher-pointing-with-finger-at-mathematical-equation-on-in-picture-id1080232656?k=20&m=1080232656&s=612x612&w=0&h=7OszmnpcTXIiIhqUXUL3sOaI-nn9DisJU8z3ceeHL5k=" alt="" />
-                                <p>Павел Александров <span>Аллерголог Венеролог</span></p>
-                            </div>
+                            {personal ? 
+                                personal.map((el, index) => (
+                                    <div className="teacher" key={index}>
+                                        <img src={el.photo} alt="Фото" />
+                                        <p>{el.first_name} {el.last_name}   <span>{el.speciality ? el.speciality : "Доктор"}</span></p>
+                                    </div>
+                                ))
+                            : 
+                            <p></p>}
                         </div>
                     </div>
                     <div className="explore">
-                        <h1>EXPLORE ALL</h1>
+                        <h1><Link to="/personal" style={{color: "#38d47c"}}> EXPLORE ALL</Link></h1>
                     </div>
                 </div>
             </div>

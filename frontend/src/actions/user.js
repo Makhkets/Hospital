@@ -37,6 +37,7 @@ export const getUser = async () => {
                 }
             })
     
+
             if (resp.data.id > 0) {
                 return resp
             } else {

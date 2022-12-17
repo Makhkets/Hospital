@@ -10,19 +10,40 @@ from loguru import logger as l
 
 class CustomUser(AbstractUser):
     email = models.EmailField()
+    speciality = models.CharField(max_length=100, verbose_name="Специальность", blank=True, null=True)
+    photo = models.CharField(
+        max_length=500, 
+        default="https://www.meme-arsenal.com/memes/723c78e9be76eba2598c2d4c611f994c.jpg", 
+        verbose_name="Фото")
+
     username = models.CharField(
         max_length=150,
         unique=True,
         blank=True,
         null=True
     )
+
     is_confirmed = models.BooleanField(default=False)
-    REQUIRED_FIELDS = [ "email", 'is_staff', "is_confirmed"]
+    REQUIRED_FIELDS = [ "email", 'is_staff', "is_confirmed", "photo"]
 
     def __str__(self):
         return self.email
 
 USER = get_user_model()
+
+class Service(models.Model):
+    user = models.ForeignKey(USER, on_delete=models.CASCADE, verbose_name="Персонал")
+    price = models.CharField(max_length=30, verbose_name="Цена за ваши услуги от и до")
+    desc = models.CharField(max_length=400, verbose_name="Описание")
+    whatsapp = models.CharField(max_length=50, verbose_name="Ваш номер whatsapp'a")
+    telegram = models.CharField(max_length=50, verbose_name="Ваш username телеграмма")
+
+    def __str__(self):
+        return self.user.get_email_field_name()
+
+    class Meta:
+        verbose_name = "Услуга"
+        verbose_name_plural = "Услуги"
 
 class Patient(models.Model):
     CHOICES = (

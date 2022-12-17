@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import ActionHistory, userProfile, \
-                    CustomUser, Patient, Visit
+                    CustomUser, Patient, Visit, Service
 
 class PatientAdmin(admin.ModelAdmin):
     list_display = (
@@ -35,7 +35,21 @@ class VisitAdmin(admin.ModelAdmin):
         'update_time', 'solution'
     )
 
+class CustomUserAdmin(admin.ModelAdmin):
+    list_display = (
+        "email", "username",
+        "first_name", "last_name",
+        "is_confirmed", "is_staff"
+    )
+
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = (
+        "user", "price",
+        "whatsapp", "telegram",
+    )
+
 admin.site.register(Patient, PatientAdmin)
 admin.site.register(ActionHistory, ActionHistoryAdmin)
 admin.site.register(Visit, VisitAdmin)
-admin.site.register(CustomUser)
+admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Service, ServiceAdmin)
