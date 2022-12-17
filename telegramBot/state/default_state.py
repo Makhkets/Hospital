@@ -1,4 +1,6 @@
 
+from aiogram.dispatcher.filters.state import State, StatesGroup
 
-class DefaultState(StatesGroup):
-    test = State()
+
+class FindState(StatesGroup):
+    q = State()

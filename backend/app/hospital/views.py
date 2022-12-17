@@ -65,9 +65,18 @@ class PatientAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
             Q(first_name__icontains=search_query) | 
             Q(last_name__icontains=search_query)  |
             Q(patronymic__icontains=search_query) | 
-            Q(chamber__icontains=search_query)
+            Q(chamber__icontains=search_query)    |
+            Q(series__icontains=search_query)
         )
         return Response(PatientSerializer(patients, many=True).data)
+
+    @action(methods=["get"], detail=True, url_path="medical")
+    def patient_find_list(self, request, pk: str):
+        try:
+            return Response(PatientSerializer(Patient.objects.get(pk=pk)).data)
+        except Patient.DoesNotExist:
+            patient = Patient.objects.get(medical_number=pk) 
+            return Response(PatientSerializer(patient).data)
 
     @action(methods=["get"], detail=True, url_path="branch")
     def branch_list(self, request, pk: str):
