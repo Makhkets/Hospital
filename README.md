@@ -31,6 +31,19 @@ MD HELPER - Автоматизация задач госпиталей
 - [x] Добавлен README.md
 - [x] Добавлена **Модифицированная Лицензия** (Apache 2.0)
 
+##### Telegram Bot:
+
+- [x] Запись к пациентам
+- [x] Информация о госпитале
+- [x] Статистика
+- [x] Отделения
+- [x] Просмотр пациентов
+- [x] Поиск пациента
+- [x] Просмотр врачей
+- [x] Просмотр заявок на посещение пациента и взаимодействие с ними
+- [x] Панель админа, со всей информацией о ней
+- [x] Добавление пациента в базу
+
 ##### Backend:
 
 - [x] Аутентификация с помощью **JWT Токенов**
@@ -107,7 +120,7 @@ MD HELPER - Автоматизация задач госпиталей
 
 
 
-## Скриншоты сайта (новый дизайн):
+## Скриншоты (новый дизайн):
 
 ![image-20220928214134469](/images/_1.png)
 
@@ -131,7 +144,31 @@ MD HELPER - Автоматизация задач госпиталей
 
 
 
+![Telegram_7wyMs7bCE0](/images/telegram/Telegram_7wyMs7bCE0.png)
 
+![Telegram_8L265QLIuB](/images/telegram/Telegram_8L265QLIuB.png)
+
+![Telegram_35T26BgVBA](/images/telegram/Telegram_35T26BgVBA.png)
+
+![Telegram_64HwVIUya1](/images/telegram/Telegram_64HwVIUya1.png)
+
+![Telegram_BEzeKpGbco](/images/telegram/Telegram_BEzeKpGbco.png)
+
+![Telegram_GFyRBFfpHp](/images/telegram/Telegram_GFyRBFfpHp.png)
+
+![Telegram_kkxVkdOxj6](/images/telegram/Telegram_kkxVkdOxj6.png)
+
+![Telegram_m7B3s7dfCs](/images/telegram/Telegram_m7B3s7dfCs.png)
+
+![Telegram_mHjsSPZJWW](/images/telegram/Telegram_mHjsSPZJWW.png)
+
+![Telegram_MKe9ho9ktv](/images/telegram/Telegram_MKe9ho9ktv.png)
+
+![Telegram_qytPZSVzO0](/images/telegram/Telegram_qytPZSVzO0.png)
+
+![Telegram_rxE8yNzP3Q](/images/telegram/Telegram_rxE8yNzP3Q.png)
+
+![Telegram_VLhPYRSvrs](/images/telegram/Telegram_VLhPYRSvrs.png)
 
 
 
