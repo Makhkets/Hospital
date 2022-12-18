@@ -37,7 +37,7 @@ class VisitAdmin(admin.ModelAdmin):
 
 class CustomUserAdmin(admin.ModelAdmin):
     list_display = (
-        "email", "username",
+        "pk", "email", "username",
         "first_name", "last_name",
         "is_confirmed", "is_staff"
     )

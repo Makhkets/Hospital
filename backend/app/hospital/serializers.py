@@ -22,6 +22,7 @@ class ActionHistorySerializer(serializers.ModelSerializer):
         )
 
 class VisitSerializer(serializers.ModelSerializer):
+    # patient = PatientSerializer()
     class Meta:
         model = Visit
         fields = (

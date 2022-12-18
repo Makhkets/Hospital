@@ -86,7 +86,7 @@ class Visit(models.Model):
     visit_time = models.CharField(max_length=40, verbose_name="Время посещения")
     create_time = models.DateField(auto_now_add=True, verbose_name="Заявка создана в")
     update_time = models.DateTimeField(auto_now=True, verbose_name="Заявка обновлена в")
-    solution = models.BooleanField(null=True, blank=True, verbose_name="Решение врача")
+    solution = models.BooleanField(null=True, blank=True, verbose_name="Решение врача", default=None)
     
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT, verbose_name="Пациент")
 

@@ -16,8 +16,9 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import ParseMode
 from aiogram.utils import executor
 
-@dp.message_handler(text="/start")
+@dp.message_handler(text="/start", state="*")
 async def start(message: types.Message, state: FSMContext):
+    await state.finish()
     text = f"Добрый день, <code>{message.from_user.first_name}</code> Мы рады приветствовать Вас в чат-боте госпиталя\n<b>«MD HELPER»!</b>\n\nДля выбора интересующего вас раздела воспользуйтесь кнопками из меню ниже 👇\n\n👁 Если вы не видите внизу кнопки меню, нажмите квадрат с 4-мя точкам правее окна ввода сообщений. ✉"
     await message.answer_photo(photo="https://thumbs.dreamstime.com/b/%D0%B7%D0%B5-%D0%B5%D0%BD%D0%B0%D1%8F-%D0%B1%D0%BE-%D1%8C%D0%BD%D0%B8%D1%86%D0%B0-%D0%B2-%D0%B0%D0%B1%D1%83-%D0%B4%D0%B0%D0%B1%D0%B8-82730118.jpg",
                                caption=text,
@@ -188,3 +189,79 @@ async def qstate(message: types.Message, state: FSMContext):
         else: message.answer("❌ Ошибка сети")
     except Exception as ex: await message.answer("❌ Ошибка сети: " + str(ex))
     await state.finish()
+
+
+@dp.message_handler(text="🕐 Записаться к пациенту", state="*")
+async def qstate(message: types.Message, state: FSMContext):
+    await VisitState.q.set()
+    await message.answer_photo(
+            photo="https://i.pinimg.com/564x/83/6a/b7/836ab71d226ed2f1a3a012f8a7236d65.jpg",
+            caption="<b>Заполните следующую форму:\n\n1. ID Пациента\n2. Номер телефона\n3. Дата</b>\n\nПример:<code>\n6\n+79999999999\n31.05.2022 18:35</code>",
+        )
+
+@dp.message_handler(state=VisitState.q)
+async def qstate(message: types.Message, state: FSMContext):
+    await state.finish()
+    try:
+        ID = message.text.split("\n")[0].strip()
+        PHONE = message.text.split("\n")[1].strip()
+        DATE = message.text.split("\n")[2].strip()
+
+        response = requests.post(config.BACKEND_URL + "/auth/visitor/", data={
+                                                        "patient": ID,
+                                                        "phone": PHONE,
+                                                        "visit_time": DATE,
+        }) \
+            .json()
+        
+        if response:
+            await message.answer_photo(
+                photo="https://img.freepik.com/premium-vector/green-check-mark-neon-sign-vector-check-list-button-neon-signboard-design-template-modern-trend-design-night-neon-signboard-night-bright-advertising-light-banner-light-art-vector-illustration_175838-1036.jpg",
+                caption="<b>✅ Успешно оставлена заявка</b>\n\n<code>позже с вами свяжется врач по вашему контактному телефону</code>"
+            )
+    except Exception as ex: await message.answer("❌ Ошибка сети: " + str(ex))
+
+
+
+@dp.message_handler(text="🧑 Пациенты", state="*")
+async def qstate(message: types.Message, state: FSMContext):
+    try:
+        response = requests.get(config.BACKEND_URL + "/auth/patients/").json()
+        if response:
+            text = ""
+            for data in response:
+                text += f"ID: <code>{data['id']}</code>\n<code>{data['first_name']} {data['last_name']} {data['patronymic']}</code>\nОтделение: <code>{data['branch']}</code>\nКомната: <code>{data['chamber']}</code>\n\n"
+            await message.answer_photo(
+                photo="https://i.pinimg.com/564x/4e/bc/d1/4ebcd152f5cbc120f5890677246ea779.jpg",
+                caption=text
+            )
+        else: message.answer("❌ Ошибка сети")
+    except Exception as ex: await message.answer("❌ Ошибка сети: " + str(ex))
+
+
+@dp.message_handler(text="👨‍⚕️ Врачи", state="*")
+async def qstate(message: types.Message, state: FSMContext):
+    try:
+        response = requests.get(config.BACKEND_URL + "/auth/service/").json()
+        if response:
+            for data in response:
+                text = f"""
+ФИО: <code>{data['user']['first_name']} {data['user']['last_name']}</code>
+
+Описание:
+<code>{data['desc']}</code>
+
+<b>Цена за услуги: {data['price']} рублей</b>
+
+<code>Чтобы связаться с врачом воспользуйтесь кнопками ниже</code>
+"""
+                inline_kb_full = types.InlineKeyboardMarkup()
+                inline_kb_full.row(types.InlineKeyboardButton("🟢 Whatsapp", url=f"https://wa.me/{data['whatsapp']}"), 
+                                    types.InlineKeyboardButton("🔵 Telegram", url=f"https://t.me/{data['telegram']}"))
+                await message.answer_photo(
+                    photo=data['user']['photo'],
+                    caption=text,
+                    reply_markup=inline_kb_full,
+                )
+        else: await message.answer("❌ Ошибка сети")
+    except Exception as ex: await message.answer("❌ Ошибка сети: " + str(ex))

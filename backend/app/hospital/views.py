@@ -46,6 +46,7 @@ class PatientAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
                 .exclude(branch="Не выбрано")
 
     def create(self, request):
+        request.data._mutable = True
         check = patient_check(data=request.data) # Проверяем пользователя на наличе, если есть то обновляем его
         if check:
             return Response(PatientSerializer(check).data)
@@ -95,9 +96,9 @@ class ActionHistoryAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
     serializer_class = ActionHistorySerializer
     action_permission_classes = {
                                         'create': [IsTokenAdminAuth],
-                                        'retrieve': [IsTokenAdminAuth],
+                                        'retrieve': [IsEveryoneAllowed],
                                         'list': [IsEveryoneAllowed],
-                                        'detail': [IsEveryoneAllowed],
+                                        'detail': [IsTokenAdminAuth],
                                         'update': [IsTokenAdminAuth],
                                         'partial_update': [IsTokenAdminAuth],
                                         'destroy': [IsTokenAdminAuth],
@@ -113,17 +114,30 @@ class VisitAPIView(ActionPermissionClassesMixin, viewsets.ModelViewSet):
     queryset = Visit.objects.all()
     serializer_class = VisitSerializer
     action_permission_classes = {
-                                        'create': [IsTokenAdminAuth],
-                                        'retrieve': [IsTokenAdminAuth],
+                                        'create': [IsEveryoneAllowed],
+                                        'retrieve': [IsEveryoneAllowed],
                                         'list': [IsEveryoneAllowed],
-                                        'update': [IsTokenAdminAuth],
+                                        'update': [IsEveryoneAllowed],
                                         'detail': [IsEveryoneAllowed],
-                                        'partial_update': [IsTokenAdminAuth],
-                                        'destroy': [IsTokenAdminAuth],
+                                        'partial_update': [IsEveryoneAllowed],
+                                        'destroy': [IsEveryoneAllowed],
                                 }
     def list(self, request, *args, **kwargs):
         visitors = Visit.objects.filter(solution=None)
         return Response(VisitSerializer(visitors, many=True).data)
+
+    def create(self, request, *args, **kwargs):
+        PATIENT = Patient.objects.get(pk=request.data.get('patient'))
+        PHONE = request.data.get('phone')
+        VISIT_TIME = request.data.get('visit_time')
+
+        response = Visit.objects.create(
+            patient=PATIENT,
+            phone=PHONE,
+            visit_time=VISIT_TIME
+        )
+
+        return Response(VisitSerializer(response).data)
     
 
 class StatisticAPIView(APIView):

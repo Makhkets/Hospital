@@ -9,9 +9,9 @@ async function contactRequest(data, patient) {
             visit_time: `${data.date} ${data.time}`,
             patient: patient,
         }, {
-            headers: {
-                "Authorization": `JWT ${access}`
-            }
+            // headers: {
+            //     "Authorization": `JWT ${access}`
+            // }
         })
         return true;
     } catch {
