@@ -378,7 +378,8 @@ body {
 }
 
 .signup {
-    margin-top: 8%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     display: flex;
     justify-content: center;
     color: white;
@@ -422,6 +423,30 @@ body {
                         margin-bottom: 3%;
                         color:#34D178;
                     }
+                    select {
+                        border-radius: 15px;
+                        color: white;
+                        border: 0;
+                        background-color: #0b0b11;
+                        font-size: 20px;
+                        margin-bottom: 4%;
+                        padding: 2vh;
+                        outline: none;
+                        width: 430px;
+
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        text-indent: 1px;
+                        text-overflow: '';
+                        
+
+                        p {
+                            font-size: 18px;
+                            margin-bottom: 3%;
+                            color:#34D178;
+                        }
+    
+                    }
                 }
                 .button {
                     button {
@@ -438,7 +463,7 @@ body {
                     }
                 }
                 .links {
-                    margin-top: 2vh;
+                    margin-top: 0.5vh;
                     a {
                         text-decoration: none;
                         color: gray;

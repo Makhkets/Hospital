@@ -7,8 +7,8 @@
 
 BACKEND_URL = "http://127.0.0.1:8000"
 
-TOKEN = "5022906736:AAEdtLYnF3sXv-dy-vt3ko2PiecF8YQhd3E"
-ADMINS = [5285375327]
+TOKEN = "5818999369:AAEXGfGhquTjxs8_tuF4VJY39_oXvLoVfFk"
+ADMINS = [5285375327, "5664921319"]
 
 URLS = {
     "endocrinology": "/auth/patients/endocrinology/branch/",
