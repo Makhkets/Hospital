@@ -1,0 +1,89 @@
+"filename", "language", "Python", "Markdown", "JavaScript", "JavaScript React", "CSS", "SCSS", "HTML", "JSON", "pip requirements", "comment", "blank", "total"
+"c:\Users\rahim\Desktop\hospital\LICENSE.md", "Markdown", 0, 170, 0, 0, 0, 0, 0, 0, 0, 0, 35, 205
+"c:\Users\rahim\Desktop\hospital\README.md", "Markdown", 0, 108, 0, 0, 0, 0, 0, 0, 0, 0, 115, 223
+"c:\Users\rahim\Desktop\hospital\backend\app\app\__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\rahim\Desktop\hospital\backend\app\app\asgi.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 0, 8, 5, 17
+"c:\Users\rahim\Desktop\hospital\backend\app\app\settings.py", "Python", 133, 0, 0, 0, 0, 0, 0, 0, 0, 28, 49, 210
+"c:\Users\rahim\Desktop\hospital\backend\app\app\urls.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 0, 15, 3, 28
+"c:\Users\rahim\Desktop\hospital\backend\app\app\wsgi.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 0, 8, 5, 17
+"c:\Users\rahim\Desktop\hospital\backend\app\app\yasg.py", "Python", 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 24
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\admin.py", "Python", 47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 56
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\apps.py", "Python", 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 9
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\managers.py", "Python", 24, 0, 0, 0, 0, 0, 0, 0, 0, 3, 5, 32
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\migrations\0001_initial.py", "Python", 91, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7, 99
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\migrations\0002_alter_actionhistory_options_alter_visit_options_and_more.py", "Python", 72, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 79
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\migrations\0003_customuser_speciality.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 19
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\migrations\0004_service.py", "Python", 23, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 30
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\migrations\0005_alter_service_options_service_desc.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 24
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\migrations\0006_alter_visit_solution.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 19
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\migrations\__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\models.py", "Python", 96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 120
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\permissions.py", "Python", 32, 0, 0, 0, 0, 0, 0, 0, 0, 3, 8, 43
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\serializers.py", "Python", 38, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7, 46
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\signal.py", "Python", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 11
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\tests.py", "Python", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 4
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\urls.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 22
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\utils.py", "Python", 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 45
+"c:\Users\rahim\Desktop\hospital\backend\app\hospital\views.py", "Python", 181, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45, 226
+"c:\Users\rahim\Desktop\hospital\backend\app\manage.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 0, 3, 5, 23
+"c:\Users\rahim\Desktop\hospital\backend\app\templates\mail.html", "HTML", 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 1, 13
+"c:\Users\rahim\Desktop\hospital\backend\requirements.txt", "pip requirements", 0, 0, 0, 0, 0, 0, 0, 0, 34, 0, 0, 34
+"c:\Users\rahim\Desktop\hospital\frontend\README.md", "Markdown", 0, 38, 0, 0, 0, 0, 0, 0, 0, 0, 33, 71
+"c:\Users\rahim\Desktop\hospital\frontend\package-lock.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 28821, 0, 0, 1, 28822
+"c:\Users\rahim\Desktop\hospital\frontend\package.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 45, 0, 0, 1, 46
+"c:\Users\rahim\Desktop\hospital\frontend\postcss.config.js", "JavaScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\rahim\Desktop\hospital\frontend\public\index.html", "HTML", 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 1, 18
+"c:\Users\rahim\Desktop\hospital\frontend\src\App.js", "JavaScript", 0, 0, 46, 0, 0, 0, 0, 0, 0, 0, 12, 58
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\add_history_action.js", "JavaScript", 0, 0, 31, 0, 0, 0, 0, 0, 0, 0, 5, 36
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\add_patient.js", "JavaScript", 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 2, 28
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\change_request.js", "JavaScript", 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 2, 24
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\contact_request.js", "JavaScript", 0, 0, 17, 0, 0, 0, 0, 0, 0, 3, 2, 22
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\email_activate.js", "JavaScript", 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\extract_patient.js", "JavaScript", 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 2, 21
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\find_patient.js", "JavaScript", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\find_personal.js", "JavaScript", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\getCookie.js", "JavaScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 2, 8
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\get_active_branch_patients.js", "JavaScript", 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 1, 16
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\get_history_patient.js", "JavaScript", 0, 0, 16, 0, 0, 0, 0, 0, 0, 3, 3, 22
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\get_patient.js", "JavaScript", 0, 0, 13, 0, 0, 0, 0, 0, 0, 3, 3, 19
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\get_patients.js", "JavaScript", 0, 0, 16, 0, 0, 0, 0, 0, 0, 3, 3, 22
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\get_services.js", "JavaScript", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\get_statistic.js", "JavaScript", 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\get_visitors.js", "JavaScript", 0, 0, 17, 0, 0, 0, 0, 0, 0, 3, 2, 22
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\login.js", "JavaScript", 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 8, 28
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\setCookie.js", "JavaScript", 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 6, 25
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\signin.js", "JavaScript", 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 9, 32
+"c:\Users\rahim\Desktop\hospital\frontend\src\actions\user.js", "JavaScript", 0, 0, 44, 0, 0, 0, 0, 0, 0, 0, 12, 56
+"c:\Users\rahim\Desktop\hospital\frontend\src\components\Layout.jsx", "JavaScript React", 0, 0, 0, 56, 0, 0, 0, 0, 0, 1, 13, 70
+"c:\Users\rahim\Desktop\hospital\frontend\src\components\subcomponents\Cap.jsx", "JavaScript React", 0, 0, 0, 61, 0, 0, 0, 0, 0, 0, 13, 74
+"c:\Users\rahim\Desktop\hospital\frontend\src\components\subcomponents\Footer.jsx", "JavaScript React", 0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 1, 27
+"c:\Users\rahim\Desktop\hospital\frontend\src\components\subcomponents\Sidebar.jsx", "JavaScript React", 0, 0, 0, 90, 0, 0, 0, 0, 0, 2, 13, 105
+"c:\Users\rahim\Desktop\hospital\frontend\src\context.js", "JavaScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\rahim\Desktop\hospital\frontend\src\css\index.css", "CSS", 0, 0, 0, 0, 438, 0, 0, 0, 0, 8, 92, 538
+"c:\Users\rahim\Desktop\hospital\frontend\src\css\main.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\rahim\Desktop\hospital\frontend\src\css\sign.css", "CSS", 0, 0, 0, 0, 159, 0, 0, 0, 0, 9, 45, 213
+"c:\Users\rahim\Desktop\hospital\frontend\src\css\style.css", "CSS", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\rahim\Desktop\hospital\frontend\src\css\style.scss", "SCSS", 0, 0, 0, 0, 0, 981, 0, 0, 0, 4, 119, 1104
+"c:\Users\rahim\Desktop\hospital\frontend\src\index.js", "JavaScript", 0, 0, 10, 0, 0, 0, 0, 0, 0, 2, 4, 16
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Activate.jsx", "JavaScript React", 0, 0, 0, 25, 0, 0, 0, 0, 0, 3, 8, 36
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\ActiveBranch.jsx", "JavaScript React", 0, 0, 0, 149, 0, 0, 0, 0, 0, 0, 23, 172
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Add.jsx", "JavaScript React", 0, 0, 0, 150, 0, 0, 0, 0, 0, 6, 32, 188
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Branch.jsx", "JavaScript React", 0, 0, 0, 37, 0, 0, 0, 0, 0, 0, 7, 44
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\FindPage.jsx", "JavaScript React", 0, 0, 0, 147, 0, 0, 0, 0, 0, 0, 23, 170
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Index.jsx", "JavaScript React", 0, 0, 0, 249, 0, 0, 0, 0, 0, 15, 47, 311
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Information.jsx", "JavaScript React", 0, 0, 0, 115, 0, 0, 0, 0, 0, 0, 9, 124
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\PatientPage.jsx", "JavaScript React", 0, 0, 0, 276, 0, 0, 0, 0, 0, 5, 47, 328
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Personal.jsx", "JavaScript React", 0, 0, 0, 41, 0, 0, 0, 0, 0, 45, 9, 95
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Signin.jsx", "JavaScript React", 0, 0, 0, 78, 0, 0, 0, 0, 0, 8, 20, 106
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Signup.jsx", "JavaScript React", 0, 0, 0, 84, 0, 0, 0, 0, 0, 3, 30, 117
+"c:\Users\rahim\Desktop\hospital\frontend\src\pages\Visitor.jsx", "JavaScript React", 0, 0, 0, 85, 0, 0, 0, 0, 0, 3, 13, 101
+"c:\Users\rahim\Desktop\hospital\frontend\tailwind.config.js", "JavaScript", 0, 0, 9, 0, 0, 0, 0, 0, 0, 1, 0, 10
+"c:\Users\rahim\Desktop\hospital\telegramBot\config.py", "Python", 12, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 22
+"c:\Users\rahim\Desktop\hospital\telegramBot\handlers\admin.py", "Python", 129, 0, 0, 0, 0, 0, 0, 0, 0, 23, 20, 172
+"c:\Users\rahim\Desktop\hospital\telegramBot\handlers\user.py", "Python", 205, 0, 0, 0, 0, 0, 0, 0, 0, 34, 28, 267
+"c:\Users\rahim\Desktop\hospital\telegramBot\keyboards\kb.py", "Python", 20, 0, 0, 0, 0, 0, 0, 0, 0, 11, 8, 39
+"c:\Users\rahim\Desktop\hospital\telegramBot\loader.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 12
+"c:\Users\rahim\Desktop\hospital\telegramBot\main.py", "Python", 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"c:\Users\rahim\Desktop\hospital\telegramBot\state\default_state.py", "Python", 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 12
+"Total", "-", 1289, 316, 434, 1669, 598, 981, 29, 28866, 34, 279, 1138, 35633

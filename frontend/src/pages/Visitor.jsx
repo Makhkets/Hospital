@@ -47,7 +47,7 @@ const Visitor = () => {
     function returnUserData(id) {
         if (id in lastId) {} else {
             setLastId(current => [...current, id])
-            axios.get(`http://127.0.0.1:8000/auth/patients/${id}/`, {
+            axios.get(`http://encodee.pythonanywhere.com/auth/patients/${id}/`, {
                 // headers: {
                 //     "Authorization": "JWT " + getCookie('access')
                 // }

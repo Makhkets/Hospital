@@ -115,6 +115,13 @@ footer {
     font-size: 14.5px;
 }
 
+.footer_text a {
+    color: #28a745;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 14.5px;
+}
+
 .footer_text:hover {
     text-decoration: underline;
 }

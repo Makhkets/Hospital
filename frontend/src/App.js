@@ -22,6 +22,7 @@ import ActiveBranch from "./pages/ActiveBranch";
 import FindPage from "./pages/FindPage";
 import Visitor from "./pages/Visitor";
 import Personal from "./pages/Personal";
+import RequestDoctor from "./pages/RequestDoctor";
 
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
                 <Route path="/information" element={<Information />} />
                 <Route path="/visitors" element={<Visitor />} />
                 <Route path="/personal" element={<Personal />} />
+                <Route path="/enroll" element={<RequestDoctor />} />
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/activate/:uid/:token/" element={<Activate />} />

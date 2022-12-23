@@ -3,7 +3,7 @@ const Footer = () => {
         <footer>
             <div className="footer">
                 <div className="column">
-                    <p className="footer_text">Мы в Youtube</p>
+                    <p className="footer_text"><a href="https://t.me/ENCODEE">Сотрудничество</a></p>
                     <p className="footer_text">Мы в Vk</p>
                     <p className="footer_text">Мы в Instagram</p>
                 </div>

@@ -21,9 +21,9 @@ const Cap = (props) => {
             <div className="cap__wrapper">
                 <div className="cap">
                     <div className="container-4">
-                        <input type="search" id="search" placeholder="Search..." onChange={e => setFindValue(e.target.value)} value={findValue} />
+                        <input type="search" id="search" placeholder="Поиск..." onChange={e => setFindValue(e.target.value)} value={findValue} />
                         <button className="icon" style={{marginBottom: "2.5px"}} onClick={find}><i className="fa fa-search"></i></button>
-                        <Link to="/add"><button style={{marginLeft: "3vh", height: "50px"}} className="beautifulButton">Добавить пациента</button></Link>
+                        <Link to="/enroll"><button style={{marginLeft: "3vh", height: "50px"}} className="beautifulButton">Запись к врачу</button></Link>
                     </div>
                 </div>
 

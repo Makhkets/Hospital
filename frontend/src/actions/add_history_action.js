@@ -15,7 +15,10 @@ async function addHistoryAction(action, patient) {
         today = mm + '/' + dd + '/' + yyyy + ` ${Hour}:${Minutes}:${Seconds}`;
         const report = `${action} в ${today} , Пациент: ${patient.first_name} ${patient.last_name} ${patient.patronymic}`
 
-        let response = await axios.post(`http://127.0.0.1:8000/auth/actionHistory/`, {
+        let localhostUri = `http://127.0.0.1:8000/auth/actionHistory/`
+        let tempUri = `http://encodee.pythonanywhere.com/auth/actionHistory/`
+
+        let response = await axios.post(tempUri, {
             action: report,
             user: patient.id,
         }, {

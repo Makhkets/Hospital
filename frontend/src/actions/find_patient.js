@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const findtPatient = async (patient) => {
     try {
-        let response = await axios.get(`http://127.0.0.1:8000/auth/patients/${patient}/find`)
+        let response = await axios.get(`http://encodee.pythonanywhere.com/auth/patients/${patient}/find`)
         if (response.data) {
             return response.data;
         } else {

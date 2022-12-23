@@ -118,8 +118,8 @@ const Add = () => {
                                 </div>
 
                                 <div className="input">
-                                    <p>Фамилие</p>
-                                    <input type="text" placeholder="Фамилие"
+                                    <p>Фамилия</p>
+                                    <input type="text" placeholder="Фамилия"
                                     onChange={e => setPatient({...p, last_name: e.target.value})} value={p.last_name} />
                                 </div>
 
@@ -137,7 +137,7 @@ const Add = () => {
 
                                 <div className="input">
                                     <p>Мед. Полис</p>
-                                    <input type="text" placeholder="Мед. Полис"
+                                    <input type="text" placeholder="Мед. полис"
                                     onChange={e => setPatient({...p, medical_number: e.target.value})} value={p.medical_number} />
                                 </div>
                                 <div className="input">

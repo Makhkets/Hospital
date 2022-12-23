@@ -60,23 +60,12 @@ const Information = () => {
                     <p>Государственное бюджетное учреждение «Клиническая больница №4 г. Грозного».</p>
                 </div>
                 <div className="information_container">
-                    <div className="info_container">
-                        <div className="block">
-                            <div className="_1">
-                                <iframe className="_2" src="https://yandex.ru/maps-reviews-widget/1021194958?comments">
-                                    <a className="_3" href="https://yandex.ru/maps/org/klinicheskaya_bolnitsa_1_imeni_u_i_khanbiyeva/1021194958/" target="_blank">
-                                        Клиническая больница № 1 имени У. И. Ханбиева на карте Грозного — Яндекс Карты
-                                    </a>
-                                </iframe>
-                            </div>
-                        </div>
-                    </div>
 
                     <div className="map">
                         <div>
                             <a className="first" href="https://yandex.ru/maps/org/klinicheskaya_bolnitsa_1_imeni_u_i_khanbiyeva/1021194958/?utm_medium=mapframe&utm_source=maps">Клиническая больница № 1 имени У. И. Ханбиева</a>
                             <a className="second" href="https://yandex.ru/maps/1106/grozniy/category/hospital/184105956/?utm_medium=mapframe&utm_source=maps">Больница для взрослых в Грозном</a>
-                            <iframe className="frame" src="https://yandex.ru/map-widget/v1/-/CCUbiYc0OA" width="700" height="650" frameborder="1" allowfullscreen="true"></iframe>
+                            <iframe className="frame" src="https://yandex.ru/map-widget/v1/-/CCUbiYc0OA"></iframe>
                         </div>
                     </div>
                 </div>

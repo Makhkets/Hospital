@@ -22,7 +22,8 @@ const Sidebar = (props) => {
                 <div className="wrapper">                    
                     <div className="container">
                         <div className="title">
-                            <h1><span style={{color: "#38d47c"}}>MEDICAL </span>HELPER</h1>
+                            {/* <h1><span style={{color: "#38d47c"}}>VMNR </span>HELPER</h1> */}
+                            <img src="https://s1.hostingkartinok.com/uploads/images/2022/12/7de0aca3a6bdf13862994ba0b4802ed6.png" width="62%" height="255px" alt="" />
                         </div>
 
                         <div className="blocks">
@@ -30,9 +31,9 @@ const Sidebar = (props) => {
 
                                 
                                 <Link to="/" className={props.choice === "1" ? "card_active" : "card"}>
-                                    <ion-icon name="home" style={{fontSize: "30px"}}></ion-icon>
+                                    <ion-icon name="person" style={{fontSize: "30px"}}></ion-icon>
                                     <p>
-                                        Главная
+                                        Пациенты
                                     </p>
                                 </Link>
                                 <Link to="/profile/" className={props.choice === "2" ? "card_active" : "card"}>
@@ -94,7 +95,7 @@ const Sidebar = (props) => {
                         </div>
                     </div>
                     <div className="explore">
-                        <h1><Link to="/personal" style={{color: "#38d47c"}}> EXPLORE ALL</Link></h1>
+                        <h1><Link to="/personal" style={{color: "#38d47c"}}> ВЕСЬ ПЕРСОНАЛ</Link></h1>
                     </div>
                 </div>
             </div>
