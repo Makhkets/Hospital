@@ -18,7 +18,7 @@ async function addHistoryAction(action, patient) {
         let localhostUri = `http://127.0.0.1:8000/auth/actionHistory/`
         let tempUri = `http://encodee.pythonanywhere.com/auth/actionHistory/`
 
-        let response = await axios.post(tempUri, {
+        let response = await axios.post(localhostUri, {
             action: report,
             user: patient.id,
         }, {

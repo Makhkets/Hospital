@@ -4,7 +4,7 @@ import getCookie from "./getCookie"
 export const getPatient = async (id) => {
     try {
         const access = getCookie("access")
-        let response = await axios.get(`http://encodee.pythonanywhere.com/auth/patients/${id}/`, {
+        let response = await axios.get(`http://127.0.0.1:8000/auth/patients/${id}/`, {
             // headers: {
             //     "Authorization": `JWT ${access}`
             // }
