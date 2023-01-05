@@ -164,7 +164,7 @@ const Add = () => {
 
                         </div>
                         <div className="img">
-                            <img src="https://i.pinimg.com/564x/0e/ba/eb/0ebaeb4bd9d630cec5329dd54c2ce67c.jpg" alt="" />
+                            {/* <img src="https://i.pinimg.com/564x/0e/ba/eb/0ebaeb4bd9d630cec5329dd54c2ce67c.jpg" alt="" /> */}
                         </div>
                     </div>
                 </div>

@@ -96,7 +96,7 @@ const RequestDoctor = () => {
                         </div>
                     </div>
                     <div className="img">
-                        <img src="https://i.pinimg.com/564x/42/a3/77/42a3775ce8e94ab6d6823e89141636f2.jpg" alt="" />
+                        {/* <img src="https://i.pinimg.com/564x/42/a3/77/42a3775ce8e94ab6d6823e89141636f2.jpg" alt="" /> */}
                     </div>
                 </div>
             </div>

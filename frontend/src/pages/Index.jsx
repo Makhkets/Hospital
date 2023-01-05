@@ -9,7 +9,7 @@ const Index = () => {
 
     const [patients, setPatients] = useState(false)
     const [badPatients, setBadPatients] = useState(false)
-    const state = ["Хорошее", "Среднее", "Плохое"]
+    const state = ["Удовлетворительное", "Среднее", "Критическое"]
 
     const [hideElements, setHideElements] = useState(true) 
     
@@ -24,14 +24,14 @@ const Index = () => {
         if (patients) {
             patients.map((el, index) => {
                 if (el.check) {} else {
-                    if (el.statePatient === "Плохое") {
+                    if (el.statePatient === "Критическое") {
                         if (badPatients) {
 
                             setBadPatients([...badPatients, el])
                             const myNewArray = Object.assign([...patients], {
                                 [index]: {
                                     ...patients[index],
-                                    statePatient: "Плохое",
+                                    statePatient: "Критическое",
                                     check: true
                                 }
                             });
@@ -42,7 +42,7 @@ const Index = () => {
                             const myNewArray = Object.assign([...patients], {
                                 [index]: {
                                     ...patients[index],
-                                    statePatient: "Плохое",
+                                    statePatient: "Критическое",
                                     check: true
                                 }
                             });
@@ -114,13 +114,13 @@ const Index = () => {
     };
 
     function getStatePacient(patientState) {
-        if (patientState === "Плохое") {
+        if (patientState === "Критическое") {
             return (
-                <span style={{color: "red", fontWeight: "bolder"}}>Плохое состояние</span>
+                <span style={{color: "red", fontWeight: "bolder"}}>Критическое состояние</span>
             ) 
-        } if (patientState === "Хорошее") {
+        } if (patientState === "Удовлетворительное") {
             return (
-                <span style={{color: "green", fontWeight: "bolder"}}>Хорошее состояние</span>
+                <span style={{color: "green", fontWeight: "bolder"}}>Удовлетворительное состояние</span>
             )
         } if (patientState === "Среднее") {
             return (
@@ -132,7 +132,7 @@ const Index = () => {
     function getStatePatientInfo(user, index) {
         if (user.kislorod) { } else {
             let ball = 0
-            let statePatient = "Хорошее"
+            let statePatient = "Удовлетворительное"
     
             const kislorod = getRandomInt(94, 96)
             const ch_dihanya = getRandomInt(10, 20)
@@ -154,10 +154,10 @@ const Index = () => {
             }
     
     
-            if (ball === 1) {statePatient = "Хорошее"}
+            if (ball === 1) {statePatient = "Удовлетворительное"}
             else if (ball === 2) {statePatient = "Среднее"}
             else if (ball >= 3) {
-                statePatient = "Плохое"
+                statePatient = "Критическое"
             }
     
             if (user.check) {

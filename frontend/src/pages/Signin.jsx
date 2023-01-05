@@ -64,7 +64,7 @@ const Signin = () => {
                                 onChange={e => setData({...data, username: e.target.value})} value={data.username} />
                             </div>
                             <div className="input">
-                                <p>Введите Пароль</p>
+                                <p>Введите пароль</p>
                                 <input type="password" placeholder="Пароль" 
                                 onChange={e => setData({...data, password: e.target.value})} value={data.password} />
                             </div>
@@ -81,7 +81,7 @@ const Signin = () => {
                         </div>
                     </div>
                     <div className="img">
-                        <img src="https://images.prom.ua/2605540947_w500_h500_neonovyj-svetilnik-kaktus.jpg" alt="" />
+                        {/* <img src="https://images.prom.ua/2605540947_w500_h500_neonovyj-svetilnik-kaktus.jpg" alt="" /> */}
                     </div>
                 </div>
             </div>

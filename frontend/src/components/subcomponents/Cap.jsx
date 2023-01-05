@@ -50,8 +50,8 @@ const Cap = (props) => {
                         <ul>
                             <li><Link to="/signup">Регистрация</Link></li>
                             <li><Link to="/signin">Авторизация</Link></li>
-                            <li><ion-icon name="notifications-outline" style={{fontSize: "30px", color: "rgb(68, 76, 226)", cursor: "pointer"}}></ion-icon></li>
-                            <li><ion-icon name="bookmark-outline" style={{fontSize: "30px", color: "rgb(68, 76, 226)", cursor: "pointer"}}></ion-icon></li>
+                            <li><ion-icon name="notifications-outline" style={{fontSize: "30px", color: "#34D178", cursor: "pointer"}}></ion-icon></li>
+                            <li><ion-icon name="bookmark-outline" style={{fontSize: "30px", color: "#34D178", cursor: "pointer"}}></ion-icon></li>
                             <li>
                                 <div className="nav__img">
                                     <img src="https://www.meme-arsenal.com/memes/723c78e9be76eba2598c2d4c611f994c.jpg" alt="" />

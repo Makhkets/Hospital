@@ -85,7 +85,7 @@ const Signup = (props) => {
                             </div>
                         </div>
                         <div className="img">
-                            <img src="https://i.pinimg.com/474x/61/c7/b6/61c7b6d2e052340362b3993abb99df38.jpg" alt="" />
+                            {/* <img src="https://i.pinimg.com/474x/61/c7/b6/61c7b6d2e052340362b3993abb99df38.jpg" alt="" /> */}
                         </div>
                     </div>
                 </div>
