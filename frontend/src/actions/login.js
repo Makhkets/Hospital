@@ -2,7 +2,7 @@
 import axios from "axios"
 import setCookie from "./setCookie"
 
-const url = "http://encodee.pythonanywhere.com"
+const url = "http://127.0.0.1:8000"
 
 export const signup = async (email, username, password) => {    
     const config = {
