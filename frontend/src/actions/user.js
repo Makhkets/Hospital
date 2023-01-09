@@ -11,7 +11,7 @@ export const getUser = async () => {
     try {
         if (access) {
     
-            let response = await axios.get(`${url}/auth/users/me`, {
+            let response = await axios.get(`${url}/auth/users/me/`, {
                 headers: {
                     "Authorization": `JWT ${access}`
                 }
@@ -31,7 +31,7 @@ export const getUser = async () => {
     
             setCookie("access", response.data.access, {'max-age': 300})
     
-            let resp = await axios.get(`${url}/auth/users/me`, {
+            let resp = await axios.get(`${url}/auth/users/me/`, {
                 headers: {
                     "Authorization": `JWT ${response.data.access}`
                 }
