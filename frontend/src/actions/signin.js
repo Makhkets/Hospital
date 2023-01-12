@@ -14,7 +14,7 @@ export const signin = async (username, password) => {
     let body = JSON.stringify({username, password})
 
     try {
-        let response = await axios.post(`${url}/auth/jwt/create/`, body, config)
+        let response = await axios.post(`http://encodee.pythonanywhere.com/auth/jwt/create/`, body, config)
 
         const access = response.data.access
         const refresh = response.data.refresh

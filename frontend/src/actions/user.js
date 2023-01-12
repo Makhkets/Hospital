@@ -6,7 +6,7 @@ import setCookie from "./setCookie"
 export const getUser = async () => {
     const access = getCookie("access")
     const refresh = getCookie("refresh")
-    const url = "http://127.0.0.1:8000"
+    const url = "http://encodee.pythonanywhere.com"
     
     try {
         if (access) {

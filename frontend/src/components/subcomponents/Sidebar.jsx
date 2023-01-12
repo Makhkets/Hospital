@@ -23,7 +23,7 @@ const Sidebar = (props) => {
                     <div className="container">
                         <div className="title">
                             {/* <h1><span style={{color: "#38d47c"}}>VMNR </span>HELPER</h1> */}
-                            <img src="https://s1.hostingkartinok.com/uploads/images/2022/12/7de0aca3a6bdf13862994ba0b4802ed6.png" width="62%" height="255px" alt="" />
+                            <img src="https://i.ibb.co/RhXR13b/2-1-Photo-Room-png-Photo-Room-1.png" width="62%" height="300px" alt="" />
                         </div>
 
                         <div className="blocks">

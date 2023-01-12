@@ -5,7 +5,7 @@ async function addPatient(first_name, last_name, patronymic,
                             passport_series, medical_number, doctor, branch) {
     try {
         const access = getCookie("access")
-        let response = await axios.post(`http://127.0.0.1:8000/auth/patients/`, {
+        let response = await axios.post(`http://encodee.pythonanywhere.com/auth/patients/`, {
             first_name: first_name,
             last_name: last_name,
             patronymic: patronymic,

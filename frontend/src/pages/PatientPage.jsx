@@ -276,12 +276,12 @@ const PatientProfile = () => {
                           
                           
                           <div className="row">
-                            <button className="button_primary" onClick={() => postAction('Сделан Укол')}>Сделан Укол</button>
-                            <button className="button_primary" onClick={() => postAction('Сделана Капельница')}>Сделана Капельница</button>
+                            <button className="button_primary" onClick={() => postAction('Сделан Укол')}>Укол</button>
+                            <button className="button_primary" onClick={() => postAction('Сделана Капельница')}>Капельница</button>
                           </div>
                           <div className="row">
-                            <button className="button_primary" onClick={() => postAction('Сделана Перевязка')}>Сделана Перевязка</button>
-                            <button className="button_primary" onClick={() => postAction('Намазана Мазь')}>Намазана Мазь</button>
+                            <button className="button_primary" onClick={() => postAction('Сделана Перевязка')}>Перевязка</button>
+                            <button className="button_primary" onClick={() => postAction('Намазана Мазь')}>Мазь</button>
                           </div>
                           
                           <div className="row">

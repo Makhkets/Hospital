@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const findPersonal = async () => {
     try {
-        let response = await axios.get(`http://127.0.0.1:8000/auth/personal/`)
+        let response = await axios.get(`http://encodee.pythonanywhere.com/auth/personal/`)
         if (response.data) {
             return response.data;
         } else {

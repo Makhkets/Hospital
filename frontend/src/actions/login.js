@@ -14,7 +14,7 @@ export const signup = async (email, username, password) => {
     let body = JSON.stringify({username, email, password})
 
     try {
-        let response = await axios.post(`${url}/auth/users/`, body, config)
+        let response = await axios.post(`http://encodee.pythonanywhere.com/auth/users/`, body, config)
         const id = response.data.id
         const email = response.data.email
         const password = response.data.password
